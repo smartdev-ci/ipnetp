@@ -18,14 +18,15 @@ export default {
 <style scoped>
 .hero {
   background: url('https://zupimages.net/up/25/11/dk7p.png') no-repeat center center/cover;
+  width: 100%;
   height: 500px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   text-align: left;
   color: white;
-  padding: 40px;
-  margin-top: 145px;
+  padding: 10px;
+  margin-top: 120px;
 }
 
 .hero-content {
