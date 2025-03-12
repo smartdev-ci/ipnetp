@@ -4,8 +4,8 @@
     <div class="top-bar">
       <div class="container">
         <div class="left">
-          <span>contact@KUTheme.edu</span>
-          <span>+1-3435-2356-222</span>
+          <!-- <span>contact@KUTheme.edu</span>
+          <span>+1-3435-2356-222</span> -->
         </div>
         <div class="right">
           <button class="support-btn">CONCOURS 2024</button>
