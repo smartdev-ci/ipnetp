@@ -24,9 +24,9 @@
                 </form>
             </div>
             <div class="footer-section">
-                <h4>Campus Life</h4>
+                <h4>Nos spécialités</h4>
                 <ul>
-                    <li>Accessibility</li>
+                    <li>Gestion commerciale</li>
                     <li>Financial Aid</li>
                     <li>Food Services</li>
                     <li>Housing</li>
@@ -35,14 +35,14 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Academics</h4>
+                <h4>Nos Formations</h4>
                 <ul>
-                    <li>Canvas</li>
-                    <li>Catalyst</li>
-                    <li>Library</li>
+                    <li>Formation initiale</li>
+                    <li>Formation continue</li>
+                    <!-- <li>Library</li>
                     <li>Time Schedule</li>
                     <li>Apply for Admissions</li>
-                    <li>Pay My Tuition</li>
+                    <li>Pay My Tuition</li> -->
                 </ul>
             </div>
             <div class="footer-section university-info">
@@ -132,6 +132,7 @@ export default {
     flex: 1;
     padding: 10px;
     min-width: 200px;
+    text-align: left;
 }
 
 .footer-section h4 {

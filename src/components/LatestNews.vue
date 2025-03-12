@@ -24,9 +24,11 @@
         </div>
       </div>
     </div>
-
     <!-- Bouton flottant "Apply Now" -->
-    <button class="apply-now">Apply Now</button>
+    <button class="apply-button" @click="scrollToTop">
+      <img src="https://img.icons8.com/?size=100&id=39778&format=png&color=000000" alt="Arrow Up" class="arrow-up" />
+    </button>
+
   </section>
 </template>
 
@@ -63,6 +65,11 @@ export default {
       ],
     };
   },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 };
 </script>
 
@@ -84,7 +91,8 @@ export default {
   padding: 20px;
 }
 
-.news-updates h2, .gallery h2 {
+.news-updates h2,
+.gallery h2 {
   color: #0f1e3d;
 }
 
@@ -156,16 +164,31 @@ export default {
   transform: scale(1.1);
 }
 
-.apply-now {
+.apply-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #2ecc71;
-  color: white;
-  padding: 15px 20px;
+  background-color: white;
   border: none;
-  border-radius: 5px;
+  width: 50px;
+  height: 55px;
+  font-size: 24px;
+  color: white;
   cursor: pointer;
-  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+  transition: background 0.3s;
+}
+
+img.arrow-up {
+  height: 35px;
+  color: white;
+}
+
+.apply-button:hover {
+  background-color: white;
 }
 </style>

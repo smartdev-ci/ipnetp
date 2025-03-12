@@ -16,12 +16,27 @@
       <!-- Bloc Apply for Admission -->
       <div class="admission-box">
         <h2>Mot de la Directrice</h2>
-        <p><span class="highlight">Fall 2019 applications</span> are now open</p>
         <p>
-          We don’t just give students an education and experiences that set them up for success in a
-          career.
+          Chers étudiants, chers partenaires, chers visiteurs,
+          <br>
+          C’est avec une immense joie que je vous souhaite la bienvenue sur le site officiel de l’Institut Pédagogique
+          National de l’Enseignement Technique et Professionnel (IPNETP).
+          <br>
+          Depuis sa création, notre établissement s’engage à former des professionnels compétents, passionnés et prêts à
+          relever les défis du monde de l’enseignement technique et de la formation professionnelle. Forts d’un corps
+          enseignant qualifié, de programmes adaptés aux réalités du marché et d’un environnement propice à
+          l’apprentissage, nous œuvrons chaque jour à l’excellence académique et à l’innovation pédagogique.
+          <br />
+          Que vous soyez un étudiant en quête de formation, un professionnel désireux d’enrichir ses compétences, ou un
+          partenaire souhaitant collaborer avec nous, sachez que l’IPNETP vous ouvre ses portes avec enthousiasme et
+          engagement.
+          <br />
+          Nous vous invitons à explorer notre site pour découvrir nos formations, nos actualités et nos opportunités.
+          Ensemble, bâtissons l’avenir de l’éducation et de la formation professionnelle !
+          <br />
+          Bienvenue à l’IPNETP !
         </p>
-        <button class="apply-button">Apply Now</button>
+        <!-- <button class="apply-button">Apply Now</button> -->
       </div>
     </div>
   </section>
@@ -67,11 +82,12 @@ export default {
 /* Conteneur pour l'image + bloc de texte */
 .admission-container {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   /* gap: 20px; */
   width: 100%;
   justify-content: space-between;
   margin: 10px;
+  
 }
 
 /* Style de l'image */
@@ -84,12 +100,14 @@ export default {
 
 /* Bloc Apply for Admission */
 .admission-box {
-  background: url('https://placehold.co/600x300') no-repeat center center/cover;
+  /* background: url('https://placehold.co/600x300') no-repeat center center/cover; */
   padding: 20px;
   color: white;
   width: 70%;
   border-radius: 10px;
   text-align: left;
+  color: black;
+  text-align: justify;
 }
 
 .apply-button {

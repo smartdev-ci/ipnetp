@@ -8,7 +8,7 @@
           <span>+1-3435-2356-222</span> -->
         </div>
         <div class="right">
-          <button class="support-btn">CONCOURS 2024</button>
+          <button class="support-btn">CONCOURS 2025</button>
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@ body {
 .top-bar .right {
   display: flex;
   align-items: center;
-  padding-right: 25px;
+  padding-right: 30px;
 }
 
 .icon-home svg {
@@ -139,21 +139,30 @@ body {
   display: inline-block;
 }
 
+/* Animation sur le bouton Concours 2025 */
 .support-btn {
   background-color: white;
   border: none;
   color: #12274a;
   padding: 8px 12px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 5px;
   height: 35px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
+/* Effet de pulsation au survol */
 .support-btn:hover {
   background-color: white;
+  color: black;
+  transform: scale(1.1);  /* Effet de zoom */
 }
 
+/* Optionnel: Retour à la taille d'origine lorsque la souris quitte le bouton */
+.support-btn:focus, .support-btn:active {
+  transform: scale(1);
+}
 /* ---------------------- Barre principale ---------------------- */
 .main-nav {
   background-color: white;

@@ -6,6 +6,7 @@
   <LatestNews />
   <OurMission />
   <FooterSection />
+  <ChatBot />
 </template>
 
 <script setup>
@@ -16,4 +17,5 @@ import AboutSection from './components/AboutSection.vue'
 import LatestNews from './components/LatestNews.vue'
 import FooterSection from './components/FooterSection.vue'
 import OurMission from './components/OurMission.vue'
+import ChatBot from './components/ChatBot.vue'
 </script>
