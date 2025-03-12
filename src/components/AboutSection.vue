@@ -95,7 +95,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 100%;
   width: 90%;
 }
 

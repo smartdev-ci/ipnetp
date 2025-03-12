@@ -58,7 +58,7 @@ export default {
   /* z-index: 9999; */
   margin: -60px auto 0px auto;
   padding: 0px 0px 0px 0px;
-  max-width: 1320px;
+  max-width: 100%;
   border-radius: 20px;
   align-items: center;
   justify-content: space-around;
