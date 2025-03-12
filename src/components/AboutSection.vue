@@ -72,7 +72,7 @@ export default {
 }
 
 .banner {
-  background: url("https://placehold.co/1200x400") no-repeat center center/cover;
+  background: #bfbfbf;
   position: relative;
   padding: 40px;
 }

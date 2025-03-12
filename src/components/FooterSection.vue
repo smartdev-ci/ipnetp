@@ -27,11 +27,11 @@
                 <h4>Nos spécialités</h4>
                 <ul>
                     <li>Gestion commerciale</li>
-                    <li>Financial Aid</li>
-                    <li>Food Services</li>
-                    <li>Housing</li>
-                    <li>Information Technologies</li>
-                    <li>Student Life</li>
+                    <li>Génie civil et environnement</li>
+                    <li>Génie Civil</li>
+                    <li>Fabrication Mécanique</li>
+                    <li>Énergétique</li>
+                    <li>Éducation Physique et Sportive</li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -50,17 +50,27 @@
                 <p>08 BP 2098 ABIDJAN 08, Abidjan, Côte d’Ivoire</p>
                 <p>+225 27 22 44 67 69</p>
                 <p>+225 27 22 48 50 35</p>
+                <div>
+                    <img class="img-footer"
+                        src="https://ipnetp.ci/wp-content/uploads/2023/12/cropped-images-1-1-300x300.png" alt="">
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>IPNEPT tout droits reservés, 2025</p>
+            <p>IPNEPT tous droits réservés, 2025</p>
             <div class="social-icons">
-                <span>🔗</span>
-                <span>📘</span>
-                <span>💬</span>
-                <span>✉️</span>
+                <a href="https://www.youtube.com/watch?v=NyOMnTtldkI&t=4s" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/ipnetp225" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fipnetp" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
             </div>
         </div>
+
     </footer>
 </template>
 
@@ -136,7 +146,7 @@ export default {
 }
 
 .footer-section h4 {
-    border-bottom: 2px solid #2ecc71;
+    border-bottom: 2px solid white;
     padding-bottom: 5px;
     margin-bottom: 10px;
 }
@@ -144,6 +154,11 @@ export default {
 .footer-section ul {
     list-style: none;
     padding: 0;
+}
+
+.img-footer {
+    height: 80px;
+    width: 120px;
 }
 
 .footer-section ul li {
@@ -170,7 +185,7 @@ export default {
 .contact-form .form-group input,
 .contact-form .form-group textarea {
     padding: 10px;
-    border: 1px solid #2ecc71;
+    border: 1px solid white;
     border-radius: 5px;
     background-color: #0f1e3d;
     color: white;
@@ -178,25 +193,26 @@ export default {
 
 .contact-form .form-group input:focus,
 .contact-form .form-group textarea:focus {
-    outline-color: #2ecc71;
+    outline-color: white;
 }
 
 .contact-form .btn {
-    background-color: #2ecc71;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .contact-form .btn:hover {
-    background-color: #27ae60;
+    background-color: white;
 }
 
 .footer-bottom {
-    border-top: 1px solid #2ecc71;
+    border-top: 1px solid white;
     padding-top: 10px;
     display: flex;
     flex-direction: row;
