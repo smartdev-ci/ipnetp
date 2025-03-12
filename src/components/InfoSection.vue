@@ -1,8 +1,8 @@
 <template>
   <section class="info-section">
     <div class="info-cards">
-      <InfoCard icon="🏛" title="University Life" description="Overall in here" />
-      <InfoCard icon="🎓" title="Graduation" description="Getting Diploma" />
+      <InfoCard icon="🏛" title="Formation initiale" description="Overall in here" />
+      <InfoCard icon="🎓" title="FOrmation continue" description="Getting Diploma" />
       <InfoCard icon="⚽" title="Athletics" description="Sport Clubs" />
       <InfoCard icon="👥" title="Social" description="Overall in here" />
     </div>

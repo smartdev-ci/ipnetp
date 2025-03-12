@@ -17,7 +17,7 @@
     <div class="main-nav">
       <div class="container">
         <div class="logo">
-          <img src="https://placehold.co/600x400" alt="Kingster University" />
+          <img src="https://zupimages.net/up/25/11/bhl8.png" alt="IPNETP" />
         </div>
         <ul class="menu">
           <li>
@@ -108,6 +108,7 @@ body {
   color: white;
   font-size: 14px;
   position: fixed;
+  height: 50px;
   top: 0;
   left: 0;
   width: 100%;
@@ -120,7 +121,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
+  /* padding: 8px 20px; */
 }
 
 .top-bar .left span {
@@ -130,6 +131,7 @@ body {
 .top-bar .right {
   display: flex;
   align-items: center;
+  padding-right: 25px;
 }
 
 .icon-home svg {
@@ -138,17 +140,18 @@ body {
 }
 
 .support-btn {
-  background-color: #2ecc71;
+  background-color: white;
   border: none;
-  color: white;
+  color: #12274a;
   padding: 8px 12px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
+  height: 50px;
 }
 
 .support-btn:hover {
-  background-color: #27ae60;
+  background-color: white;
 }
 
 /* ---------------------- Barre principale ---------------------- */
@@ -170,10 +173,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
+  height: 40px;
 }
 
 .logo img {
-  height: 40px;
+  height: 85px;
+  width: 90px;
 }
 
 .menu {

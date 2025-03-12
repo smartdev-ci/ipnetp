@@ -18,7 +18,7 @@ export default {
 <style scoped>
 .hero {
   background: url('https://zupimages.net/up/25/11/dk7p.png') no-repeat center center/cover;
-  width: 100%;
+  /* width: 100%; */
   height: 500px;
   display: flex;
   align-items: flex-end;
