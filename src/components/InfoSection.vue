@@ -89,6 +89,7 @@ export default {
   color: white;
   width: 70%;
   border-radius: 10px;
+  text-align: left;
 }
 
 .apply-button {

@@ -3,37 +3,64 @@
     <!-- Bannière -->
     <div class="banner">
       <div class="overlay">
-        <h2>About Our University</h2>
-        <p>
-          We are one of the largest, most diverse universities in the USA with over 90,000 students
-          and a further 30,000 studying across 180 countries for Kingster University.
-        </p>
-        <p>
-          Kingster University was established by John Smith in 1920 for the public benefit and is
-          recognized globally. Throughout our great history, Kingster has offered access to a wide
-          range of academic opportunities.
-        </p>
-        <button class="read-more">Read More</button>
+        <div class="title">
+          <h2> Historique  </h2>
+        </div>
+        <div class="banner-content">
+          <!-- Colonne gauche (Vidéo) -->
+          <div class="left">
+            <iframe
+              width="100%"
+              height="250"
+              src="https://www.youtube.com/embed/NyOMnTtldkI"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <!-- Colonne droite (Texte descriptif) -->
+          <div class="right">
+            <p>
+              L’Institut Pédagogique National de l’Enseignement Technique et Professionnel (IPNETP) est un établissement
+              public national d’enseignement à caractère administratif créé par la loi n° 75-939 du 26 décembre 1975 et
+              réorganisé par le décret n°2001-715 du 16 novembre 2001 déterminant les attributions, l’organisation et le
+              fonctionnement de l’IPNETP.
+            </p>
+            <p>
+              L’IPNETP est un établissement d’Enseignement Technique Supérieur et de Recherche placé sous la tutelle
+              administrative du Ministère de l’Education Nationale de l’Enseignement Technique et de la Formation
+              Professionnelle et la tutelle financière du Ministère de l’Économie et des Finances.
+            </p>
+            <ul>
+              <li>Formation du personnel enseignant et d’encadrement de l’Enseignement Technique et de la Formation Professionnelle.</li>
+              <li>Développement de la recherche et de l’innovation technologique.</li>
+              <li>Valorisation et diffusion intellectuelle aux plans national et international.</li>
+              <li>Réalisation de prestations de formation, conseil, expertise et productions pédagogiques.</li>
+              <li>Élaboration et développement des curricula.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Cartes informatives -->
     <div class="info-cards">
-      <InfoCard icon="🎓" title="Education Services" description="Kingster University was established by John Smith in 1920 for the public benefit and is recognized." />
-      <InfoCard icon="🌍" title="International Hubs" description="Kingster University was established by John Smith in 1920 for the public benefit and is recognized." />
-      <InfoCard icon="📜" title="Bachelor’s and Master’s" description="Kingster University was established by John Smith in 1920 for the public benefit and is recognized." />
-      <InfoCard icon="🏛" title="University Life" description="Kingster University was established by John Smith in 1920 for the public benefit and is recognized." />
+      <InfoCard icon="🎓" title="Education Services" description="Formation du personnel enseignant et d'encadrement." />
+      <InfoCard icon="🌍" title="International Hubs" description="Partenariats et collaborations académiques mondiales." />
+      <InfoCard icon="📜" title="Bachelor’s and Master’s" description="Programmes d'enseignement supérieur variés et spécialisés." />
+      <InfoCard icon="🏛" title="University Life" description="Un environnement académique dynamique et inclusif." />
     </div>
   </section>
 </template>
 
 <script>
-// import InfoCard from "@/components/InfoCard.vue";
+import InfoCard from "./InfoCard.vue";
 
 export default {
-  // components: {
-  //   InfoCard,
-  // },
+  components: {
+    InfoCard,
+  },
 };
 </script>
 
@@ -47,28 +74,82 @@ export default {
 .banner {
   background: url("https://placehold.co/1200x400") no-repeat center center/cover;
   position: relative;
-  padding: 60px 20px;
+  padding: 40px;
 }
 
 .overlay {
   background: rgba(0, 0, 0, 0.6);
   padding: 40px;
-  text-align: left;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .title {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+  }
 }
 
-.read-more {
-  background: #2ecc71;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 90%;
 }
 
+/* Ajustement de la vidéo */
+.left {
+  flex: 1;
+}
+
+.left iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.right {
+  flex: 2;
+  text-align: justify;
+  padding-left: 20px;
+}
+
+.right p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.right ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.right li {
+  margin-bottom: 8px;
+}
+
+/* Cartes informatives */
 .info-cards {
   display: flex;
   justify-content: space-between;
   padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right {
+    padding-left: 0;
+  }
+
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>
