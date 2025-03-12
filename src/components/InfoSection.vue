@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import InfoCard from '@/components/InfoCard.vue'
+import InfoCard from './InfoCard.vue'
 
 export default {
   components: {
