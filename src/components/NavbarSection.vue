@@ -108,7 +108,7 @@ body {
   color: white;
   font-size: 14px;
   position: fixed;
-  height: 50px;
+  height: 35px;
   top: 0;
   left: 0;
   width: 100%;
@@ -147,7 +147,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  height: 50px;
+  height: 35px;
 }
 
 .support-btn:hover {
@@ -159,7 +159,7 @@ body {
   background-color: white;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 75px;
+  top: 65px;
   left: 0;
   width: 100%;
   background-color: white;
