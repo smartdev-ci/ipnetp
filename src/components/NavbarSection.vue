@@ -272,7 +272,7 @@ body {
 
 .submenu a:hover {
   background-color: #f4f4f4;
-  border-left: 3px solid #27ae60;
+  border-left: 3px solid #12274a;
   padding-left: 12px;
 }
 
