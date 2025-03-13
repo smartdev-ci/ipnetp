@@ -37,22 +37,22 @@ export default {
         {
           title: "Formation Continue & Production Didactique",
           content: "Parallèlement, l’Institut se consacre à la production didactique et industrielle, en élaborant des contenus pédagogiques innovants et en favorisant des liens étroits avec l’industrie pour garantir une formation alignée sur les besoins du marché du travail.",
-          image: "formation-continue.jpg"
+          image: "https://ipnetp.ci/wp-content/uploads/2024/12/470156731_1131629895481549_337427231564279476_n-1536x782.jpg"
         },
         {
           title: "Recherche & Innovation",
           content: "La recherche pédagogique et technologique constitue un axe majeur de nos activités, visant à rester à la pointe des avancées éducatives et technologiques. Nous encourageons activement la participation du corps enseignant dans des projets de recherche novateurs.",
-          image: "recherche-innovation.jpg"
+          image: "https://ipnetp.ci/wp-content/uploads/2023/12/crep-2.jpg"
         },
         {
           title: "Conseil & Expertise",
           content: "En tant qu’expert en éducation, l’Institut offre des services de conseil et d’expertise, mettant à profit son savoir-faire pour accompagner d’autres institutions éducatives et entreprises. Nous mettons également l’accent sur la production de solutions innovantes adaptées aux besoins spécifiques de nos partenaires.",
-          image: "conseil-expertise.jpg"
+          image: "https://ipnetp.ci/wp-content/uploads/2025/03/1-3-720x540.jpg"
         },
         {
           title: "Applications Industrielles & Employabilité",
           content: "Enfin, notre mission inclut la mise en œuvre de projets pédagogiques intégrant des applications industrielles concrètes. Nous veillons à ce que nos apprenants puissent appliquer leurs connaissances dans des contextes réels, renforçant ainsi leur employabilité et contribuant au développement de l’industrie. En résumé, l’Institut s’engage à être un acteur dynamique et polyvalent, participant activement à la formation, la recherche et l’innovation dans le domaine éducatif et industriel.",
-          image: "applications-industrielles.jpg"
+          image: "https://ipnetp.ci/wp-content/uploads/2024/02/427998242_908004254510782_8798625404367591270_n-768x509.jpg"
         }
       ],
       selectedTab: null

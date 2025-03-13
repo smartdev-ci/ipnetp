@@ -3,8 +3,8 @@
   <HeroSection />
   <InfoSection />
   <AboutSection />
-  <LatestNews />
   <OurMission />
+  <LatestNews />
   <FooterSection />
   <ChatBot />
 </template>

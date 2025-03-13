@@ -17,10 +17,10 @@
     <div class="main-nav">
       <div class="container">
         <div class="logo">
-          <img src="https://zupimages.net/up/25/11/bhl8.png" alt="IPNETP" />
+          <a href="/"> <img src="https://zupimages.net/up/25/11/bhl8.png" alt="IPNETP" /> </a>
         </div>
         <ul class="menu">
-          <li>
+          <!-- <li>
             <a href="#" class="icon-home">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -28,7 +28,7 @@
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
             </a>
-          </li>
+          </li> -->
           <li class="has-submenu">
             <a href="#">Formations</a>
             <ul class="submenu">
