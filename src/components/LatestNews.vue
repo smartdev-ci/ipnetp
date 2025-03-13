@@ -22,6 +22,12 @@
         <div class="gallery-grid">
           <img v-for="(image, index) in galleryImages" :key="index" :src="baseUrl + image" class="gallery-image" />
         </div>
+
+        <div class="admission-results">
+          <h2>Résultat Admission</h2>
+          <p>Consultez les résultats des admissions pour l'année en cours.</p>
+          <button class="result-button">Voir les résultats</button>
+        </div>
       </div>
     </div>
     <!-- Bouton flottant "Apply Now" -->
@@ -61,7 +67,7 @@ export default {
       galleryImages: [
         "2.jpg", "2-1.jpg", "AFIPNETP.jpg", "p4.png",
         "p5.png", "p6.png", "p7.png", "p1.png",
-        "p2.png", "p3.png", "p4.png", "p5.png",
+        "p2.png",
       ],
     };
   },
@@ -143,7 +149,32 @@ export default {
   h2 {
     color: white;
   }
+  
 }
+
+.result-button {
+  /* background: #0f1e3d; */
+  color: #12274a;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.admission-results {
+  h2 {
+    text-align: left;
+    padding-top: 20px;
+  }
+  /* background: #f5f5f5; */
+  /* padding: 20px; */
+  text-align: center;
+  border-radius: 5px;
+}
+/* .result-button:hover {
+  background: #12274a;
+  color: white;
+} */
 
 .gallery-grid {
   display: grid;
@@ -187,6 +218,7 @@ img.arrow-up {
   height: 35px;
   color: white;
 }
+
 
 .apply-button:hover {
   background-color: white;

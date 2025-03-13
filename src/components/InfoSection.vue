@@ -3,7 +3,7 @@
     <div class="info-cards">
       <InfoCard icon="🏛" title="Formation initiale" description="Formation initiale" />
       <InfoCard icon="🎓" title="Formation continue" description="Formation continue" />
-      <InfoCard icon="⚽" title="Recherche et innovation" description="Recherche et innovation" />
+      <InfoCard icon="💡" title="Recherche et innovation" description="Recherche et innovation" />
       <InfoCard icon="👥" title="Conseil & Expertise" description="Conseil & Expertise" />
     </div>
 

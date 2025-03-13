@@ -4,20 +4,15 @@
     <div class="banner">
       <div class="overlay">
         <div class="title">
-          <h2> Historique  </h2>
+          <h2> Historique </h2>
         </div>
         <div class="banner-content">
           <!-- Colonne gauche (Vidéo) -->
           <div class="left">
-            <iframe
-              width="100%"
-              height="250"
-              src="https://www.youtube.com/embed/NyOMnTtldkI"
-              title="YouTube video player"
-              frameborder="0"
+            <iframe width="100%" height="250" src="https://www.youtube.com/embed/NyOMnTtldkI"
+              title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+              allowfullscreen></iframe>
           </div>
           <!-- Colonne droite (Texte descriptif) -->
           <div class="right">
@@ -33,7 +28,8 @@
               Professionnelle et la tutelle financière du Ministère de l’Économie et des Finances.
             </p>
             <ul>
-              <li>Formation du personnel enseignant et d’encadrement de l’Enseignement Technique et de la Formation Professionnelle.</li>
+              <li>Formation du personnel enseignant et d’encadrement de l’Enseignement Technique et de la Formation
+                Professionnelle.</li>
               <li>Développement de la recherche et de l’innovation technologique.</li>
               <li>Valorisation et diffusion intellectuelle aux plans national et international.</li>
               <li>Réalisation de prestations de formation, conseil, expertise et productions pédagogiques.</li>
@@ -46,10 +42,14 @@
 
     <!-- Cartes informatives -->
     <div class="info-cards">
-      <InfoCard icon="🎓" title="Education Services" description="Formation du personnel enseignant et d'encadrement." />
-      <InfoCard icon="🌍" title="International Hubs" description="Partenariats et collaborations académiques mondiales." />
-      <InfoCard icon="📜" title="Bachelor’s and Master’s" description="Programmes d'enseignement supérieur variés et spécialisés." />
-      <InfoCard icon="🏛" title="University Life" description="Un environnement académique dynamique et inclusif." />
+      <InfoCard icon="🎓" title="Formation et Perfectionnement"
+        description="Formation du personnel enseignant et d'encadrement." />
+      <InfoCard icon="🌍" title="Ouverture Internationale"
+        description="Partenariats et collaborations académiques variées." />
+      <InfoCard icon="📜" title="Diplômes et Certifications"
+        description="Programmes d'enseignement supérieur variés et spécialisés." />
+      <InfoCard icon="🏛" title="Vie Universitaire" description="Un environnement académique dynamique et inclusif." />
+
     </div>
   </section>
 </template>

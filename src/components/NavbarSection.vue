@@ -220,7 +220,7 @@ body {
   content: '';
   width: 0;
   height: 3px;
-  background-color: #27ae60;
+  background-color: #12274a;
   position: absolute;
   bottom: 0;
   left: 0;
