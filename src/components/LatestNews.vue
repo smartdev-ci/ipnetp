@@ -167,7 +167,7 @@ export default {
 .apply-button {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 60px;
   background-color: white;
   border: none;
   width: 50px;

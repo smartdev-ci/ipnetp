@@ -32,7 +32,7 @@ export default {
         {
           title: "Formation Initiale",
           content: "L’Institut s’engage à offrir une vaste gamme de formations, tant initiales que continues, visant à développer les compétences et les connaissances des apprenants. Dans le cadre de la formation initiale, notre mission est d’assurer une préparation complète pour l’entrée dans le monde professionnel, en mettant l’accent sur l’acquisition de compétences pratiques et théoriques.",
-          image: "formation-initiale.jpg"
+          image: "https://ipnetp.ci/wp-content/uploads/2025/03/20-1.jpg"
         },
         {
           title: "Formation Continue & Production Didactique",

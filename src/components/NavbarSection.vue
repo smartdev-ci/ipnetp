@@ -22,17 +22,8 @@
         <ul class="menu">
           <li>
             <a href="#" class="icon-home">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
@@ -108,11 +99,11 @@ body {
   color: white;
   font-size: 14px;
   position: fixed;
-  height: 35px;
+  height: 65px;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 15px 20px;
+  /* padding: 15px 20px; */
   z-index: 1000;
 }
 
@@ -121,6 +112,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
   /* padding: 8px 20px; */
 }
 
@@ -132,6 +124,7 @@ body {
   display: flex;
   align-items: center;
   padding-right: 30px;
+  height: 100%;
 }
 
 .icon-home svg {
@@ -144,25 +137,29 @@ body {
   background-color: white;
   border: none;
   color: #12274a;
+  font-weight: bolder;
   padding: 8px 12px;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
   border-radius: 5px;
-  height: 35px;
+  height: 50px;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 /* Effet de pulsation au survol */
 .support-btn:hover {
   background-color: white;
-  color: black;
-  transform: scale(1.1);  /* Effet de zoom */
+  color: #12274a;
+  transform: scale(1.1);
+  /* Effet de zoom */
 }
 
 /* Optionnel: Retour à la taille d'origine lorsque la souris quitte le bouton */
-.support-btn:focus, .support-btn:active {
+.support-btn:focus,
+.support-btn:active {
   transform: scale(1);
 }
+
 /* ---------------------- Barre principale ---------------------- */
 .main-nav {
   background-color: white;
@@ -172,7 +169,8 @@ body {
   left: 0;
   width: 100%;
   background-color: white;
-  z-index: 999; /* Juste sous la barre supérieure */
+  z-index: 999;
+  /* Juste sous la barre supérieure */
 }
 
 .main-nav .container {
@@ -200,7 +198,8 @@ body {
 
 .menu li {
   display: inline-block;
-  position: relative; /* Important pour le positionnement des sous-menus */
+  position: relative;
+  /* Important pour le positionnement des sous-menus */
 }
 
 .content {
@@ -244,7 +243,8 @@ body {
 .submenu {
   list-style: none;
   position: absolute;
-  top: 100%; /* Positionné juste en dessous du parent */
+  top: 100%;
+  /* Positionné juste en dessous du parent */
   left: 0;
   background: white;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
