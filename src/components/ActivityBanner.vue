@@ -36,17 +36,20 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, defineEmits } from 'vue';
 import { useNewsStore } from '../stores/newsStore';
 import { storeToRefs } from 'pinia';
 
+const emit = defineEmits(['loaded']);
 const newsStore = useNewsStore();
 const { news } = storeToRefs(newsStore);
 
-onMounted(() => {
-  newsStore.fetchNews();
+onMounted(async () => {
+  await newsStore.fetchNews();
+  emit('loaded'); 
 });
 </script>
+
 
 <style scoped>
 section.news-banner {
