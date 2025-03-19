@@ -1,6 +1,6 @@
 <template>
   <NavbarSection />
-  <HeroSection />
+  <!-- <HeroSection /> -->
   <ActivityBanner />
   <InfoSection />
   <AboutSection />
