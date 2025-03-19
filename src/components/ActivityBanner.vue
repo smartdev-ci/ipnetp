@@ -1,4 +1,5 @@
 <template>
+  <section class="news-banner">
   <div>
     <div class="flash-banner">
       <span class="flash-label">⚡ Dernières nouvelles</span>
@@ -31,6 +32,7 @@
       </div>
     </div>
   </div>
+</section>
 </template>
 
 <script setup lang="ts">
@@ -47,6 +49,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
+section.news-banner {
+  margin-top: 12%;
+}
 .flash-banner {
   display: flex;
   align-items: center;
