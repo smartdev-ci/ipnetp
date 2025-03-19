@@ -1,6 +1,7 @@
 <template>
   <NavbarSection />
   <HeroSection />
+  <ActivityBanner />
   <InfoSection />
   <AboutSection />
   <OurMission />
@@ -18,4 +19,6 @@ import LatestNews from './components/LatestNews.vue'
 import FooterSection from './components/FooterSection.vue'
 import OurMission from './components/OurMission.vue'
 import ChatBot from './components/ChatBot.vue'
+import ActivityBanner from './components/ActivityBanner.vue'
+
 </script>
