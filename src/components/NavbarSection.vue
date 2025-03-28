@@ -134,9 +134,9 @@ body {
 
 /* Animation sur le bouton Concours 2025 */
 .support-btn {
-  background-color: white;
+  background-color: #3ca2f5;
   border: none;
-  color: #12274a;
+  color: #FFF;
   font-weight: bolder;
   padding: 8px 12px;
   font-size: 15px;
@@ -148,8 +148,8 @@ body {
 
 /* Effet de pulsation au survol */
 .support-btn:hover {
-  background-color: white;
-  color: #12274a;
+  background-color: #2268a1;
+  color: #e9eff3;
   transform: scale(1.1);
   /* Effet de zoom */
 }
@@ -170,6 +170,8 @@ body {
   width: 100%;
   background-color: white;
   z-index: 999;
+  /* border: 2px solid green; */
+  height: 70px;
   /* Juste sous la barre supérieure */
 }
 
@@ -282,4 +284,63 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+@media screen and (max-width: 1272px)
+{
+   
+  .main-nav {
+  /* border: 2px solid green; */
+  height: 45px;
+  top: 45px;
+  /* Juste sous la barre supérieure */
+}
+
+.main-nav .container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  height: 20px;
+  /* border: 1px solid #000; */
+}
+
+
+.top-bar {
+  height: 45px;
+  z-index: 1000;
+}
+.top-bar .container {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  /* border: 3px solid gold; */
+  /* padding: 8px 20px; */
+}
+
+.support-btn {
+  padding: 4px 6px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 35px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+
+.top-bar .right {
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+  height: 80%;
+  /* border: 2px solid red; */
+}
+
+
+}
+
 </style>

@@ -32,7 +32,7 @@
     </div>
     <!-- Bouton flottant "Apply Now" -->
     <button class="apply-button" @click="scrollToTop">
-      <img src="https://img.icons8.com/?size=100&id=39778&format=png&color=000000" alt="Arrow Up" class="arrow-up" />
+      <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#007bff"><path d="M446.67-80v-673l-200 199.67L200-600l280-280 280 280-46.67 47-200-200v673h-66.66Z"/></svg>    
     </button>
 
   </section>
@@ -205,7 +205,7 @@ export default {
   position: fixed;
   bottom: 20px;
   right: 60px;
-  background-color: white;
+  /* background-color: white; */
   border: none;
   width: 50px;
   height: 55px;
@@ -216,8 +216,15 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background 0.3s;
+}
+
+.apply-button svg{
+  position: absolute;
+  /* border: 3px red solid; */
+  width: 70%;
+  height: 70%;
 }
 
 img.arrow-up {
