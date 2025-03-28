@@ -30,6 +30,13 @@
             </a>
           </li> -->
           <li class="has-submenu">
+            <a href="#">Notre institut</a>
+            <ul class="submenu">
+              <li><router-link to="/mot-directrice">Mot de la Directrice</router-link></li>
+              <li><a href="#">Organisation</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
             <a href="#">Formations</a>
             <ul class="submenu">
               <li><a href="#">Formation initiale</a></li>
