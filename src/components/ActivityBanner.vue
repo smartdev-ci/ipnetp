@@ -1,34 +1,34 @@
 <template>
   <section class="news-banner">
-  <div>
-    <div class="flash-banner">
-      <span class="flash-label">⚡ Dernières nouvelles</span>
-      <span class="flash-text">Refonte du site internet de l’IPNETP : une collaboration avec la GIZ pour une meilleure accessibilité !</span>
-    </div>
-    <div class="news-container">
-      <div class="main-news" v-if="news.length">
-        <img :src="news[0].image" class="news-image" />
-        <div class="news-overlay">
-          <h2 class="news-title">{{ news[0].title }}</h2>
-          <p class="news-date">📅 {{ news[0].date }}</p>
-        </div>
+    <div>
+      <div class="flash-banner">
+        <span class="flash-label">⚡ Dernières nouvelles</span>
+        <span class="flash-text">{{ currentNewsTitle }}</span>
       </div>
-      <div class="news-grid">
-        <div v-for="(item, index) in news.slice(1)" :key="index" class="news-item">
-          <img :src="item.image" class="news-image" />
+      <div class="news-container">
+        <div class="main-news" v-if="news.length">
+          <img :src="news[0].image" class="news-image" />
           <div class="news-overlay">
-            <h3 class="news-subtitle">{{ item.title }}</h3>
-            <p class="news-date">📅 {{ item.date }}</p>
+            <h2 class="news-title">{{ news[0].title }}</h2>
+            <p class="news-date">📅 {{ news[0].date }}</p>
+          </div>
+        </div>
+        <div class="news-grid">
+          <div v-for="(item, index) in news.slice(1)" :key="index" class="news-item">
+            <img :src="item.image" class="news-image" />
+            <div class="news-overlay">
+              <h3 class="news-subtitle">{{ item.title }}</h3>
+              <p class="news-date">📅 {{ item.date }}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { onMounted, defineEmits } from 'vue';
+import { onMounted, defineEmits, ref, onBeforeUnmount } from 'vue';
 import { useNewsStore } from '../stores/newsStore';
 import { storeToRefs } from 'pinia';
 
@@ -36,12 +36,39 @@ const emit = defineEmits(['loaded']);
 const newsStore = useNewsStore();
 const { news } = storeToRefs(newsStore);
 
+// Variable pour stocker le titre actuellement affiché
+const currentNewsTitle = ref("Refonte du site internet de l'IPNETP : une collaboration avec la GIZ pour une meilleure accessibilité !");
+
+// Variable pour stocker l'intervalle
+let rotationInterval: number | null = null;
+
+// Fonction pour faire tourner les titres
+const rotateNewsTitles = () => {
+  let currentIndex = 0;
+  
+  rotationInterval = window.setInterval(() => {
+    // Si pas d'actualités, garder le texte par défaut
+    if (!news.value || news.value.length === 0) return;
+    
+    // Sinon, passer au titre suivant
+    currentIndex = (currentIndex + 1) % news.value.length;
+    currentNewsTitle.value = news.value[currentIndex].title;
+  }, 7000);
+};
+
 onMounted(async () => {
   await newsStore.fetchNews();
-  emit('loaded'); 
+  emit('loaded');
+  
+  rotateNewsTitles();
+});
+
+onBeforeUnmount(() => {
+  if (rotationInterval !== null) {
+    clearInterval(rotationInterval);
+  }
 });
 </script>
-
 
 <style scoped>
 section.news-banner {
@@ -57,8 +84,8 @@ section.news-banner {
   font-weight: bold;
   font-size: 16px;
   width: 90%;
-    margin: 0 auto;
-    border-radius: 10px;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 .flash-label {
@@ -68,6 +95,13 @@ section.news-banner {
   margin-right: 10px;
   border-radius: 4px;
   font-weight: bold;
+}
+
+.flash-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.5s ease;
 }
 
 .news-container {
@@ -145,39 +179,32 @@ section.news-banner {
   margin-top: 8px;
 }
 
-
-
-@media screen and (max-width: 1272px)
-{
-   
+@media screen and (max-width: 1272px) {
   .news-container {
-  /* border: 4px solid rgb(255, 0, 0); */
-  height: 80vh;
+    /* border: 4px solid rgb(255, 0, 0); */
+    height: 80vh;
+  }
+  
+  section.news-banner {
+    margin-top: 110px;
+    /* border: 5px solid red; */
+  }
 
-}
-section.news-banner {
-  margin-top: 110px;
-  /* border: 5px solid red; */
-}
-
-.flash-banner {
-  display: flex;
-  align-items: center;
-  background: #0f1e3d;
-  color: white;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 13px;
-  width: 90%;
+  .flash-banner {
+    display: flex;
+    align-items: center;
+    background: #0f1e3d;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    width: 90%;
     margin: 0 auto;
     border-radius: 10px;
-}
-
+  }
 }
 
 .flash-label {
   padding: 4px 8px;
 }
-
-
 </style>
