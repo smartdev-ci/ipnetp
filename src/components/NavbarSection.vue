@@ -33,7 +33,7 @@
             <a href="#">Notre institut</a>
             <ul class="submenu">
               <li><router-link to="/mot-directrice">Mot de la Directrice</router-link></li>
-              <li><a href="#">Organisation</a></li>
+              <li><router-link to="/">Organisation</router-link></li>
             </ul>
           </li>
           <li class="has-submenu">

@@ -21,6 +21,7 @@
   <LatestNews />
   <FooterSection />
   <ChatBot />
+  <router-view />
   </div>
 </template>
 
