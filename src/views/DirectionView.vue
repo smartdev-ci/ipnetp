@@ -19,6 +19,12 @@
      -->
     <!-- First Content Section -->
     <section class="content">
+      <div class="image-block">
+        <img 
+          src="https://ipnetp.ci/wp-content/uploads/2023/12/DG2.png" 
+          alt="Illustration"
+        />
+      </div>
       <div class="text-block">
         <h2>Intégrer l'IPNETP</h2>
         <p>
@@ -30,27 +36,21 @@
           Bienvenue à l’IPNETP !
         </p>
       </div>
-      <div class="image-block">
-        <img 
-          src="https://ipnetp.ci/wp-content/uploads/2023/12/DG2.png" 
-          alt="Illustration"
-        />
-      </div>
     </section>
     
     <!-- Second Content Section (Reversed) -->
     <section class="content reverse">
-      <div class="text-block">
-        <h2>Choisir une formation parmi des parcours variés...</h2>
-        <p>
-          Depuis sa création, l'IPNETP  est une institution dédiée à la formation des futurs formateurs de l'enseignement technique. Sa mission principale consiste à transmettre des connaissances pédagogiques et techniques à travers des programmes complets alliant théorie et pratique. L'École actualise régulièrement ses contenus pour s'adapter aux évolutions technologiques et pédagogiques ainsi qu'aux exigences du marché du travail. En créant un environnement d'apprentissage dynamique et collaboratif, elle favorise les échanges entre formateurs en formation. Son rôle est donc essentiel pour préparer une nouvelle génération de professionnels qualifiés, contribuant ainsi à l'amélioration de l'éducation professionnelle.
-        </p>
-      </div>
       <div class="image-block">
         <img 
           src="https://ipnetp.ci/wp-content/uploads/2023/12/2.jpg" 
           alt="Illustration"
         />
+      </div>
+      <div class="text-block">
+        <h2>Choisir une formation parmi des parcours variés...</h2>
+        <p>
+          Depuis sa création, l'IPNETP  est une institution dédiée à la formation des futurs formateurs de l'enseignement technique. Sa mission principale consiste à transmettre des connaissances pédagogiques et techniques à travers des programmes complets alliant théorie et pratique. L'École actualise régulièrement ses contenus pour s'adapter aux évolutions technologiques et pédagogiques ainsi qu'aux exigences du marché du travail. En créant un environnement d'apprentissage dynamique et collaboratif, elle favorise les échanges entre formateurs en formation. Son rôle est donc essentiel pour préparer une nouvelle génération de professionnels qualifiés, contribuant ainsi à l'amélioration de l'éducation professionnelle.
+        </p>
       </div>
     </section>
   </div>
@@ -139,5 +139,6 @@
 .image-block img {
   width: 100%;
   border-radius: 8px;
+  height: 330px;
 }
 </style>
