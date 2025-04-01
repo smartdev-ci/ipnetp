@@ -15,7 +15,7 @@
     <NavbarSection />
     <!-- <HeroSection /> -->
     <ActivityBanner @loaded="handleLoaded" />
-    <InfoSection />
+    <!-- <InfoSection /> -->
     <AboutSection />
     <OurMission />
     <LatestNews />
