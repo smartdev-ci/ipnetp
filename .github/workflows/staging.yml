@@ -1,0 +1,31 @@
+name: Deploy Vue.js to Second Server via FTP
+
+on:
+  push:
+    branches:
+      - copy
+
+jobs:
+  build-and-deploy-staging:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Récupérer le code
+        uses: actions/checkout@v3
+
+      - name: 🔧 Installer Node.js et les dépendances
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - run: npm install
+      - run: npm run build
+
+      - name: 🚀 Déployer via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.STAGING_FTP_SERVER }}
+          username: ${{ secrets.STAGING_FTP_USERNAME }}
+          password: ${{ secrets.STAGING_FTP_PASSWORD }}
+          local-dir: dist/  # Fichiers à envoyer
+          server-dir: /htdocs/  # Emplacement sur votre hébergement de staging

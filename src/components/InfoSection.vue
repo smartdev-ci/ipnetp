@@ -13,7 +13,7 @@
         <img src="https://ipnetp.ci/wp-content/uploads/2023/12/DG2.png" alt="Campus Life" />
       </div>
 
-      <!-- Bloc Apply for Admission
+      <!-- Bloc Apply for Admission -->
       <div class="admission-box">
         <h2>Mot de la Directrice</h2>
         <p>
@@ -36,8 +36,8 @@
           <br />
           Bienvenue à l’IPNETP !
         </p>
-        <button class="apply-button">Apply Now</button>
-      </div> -->
+        <!-- <button class="apply-button">Apply Now</button> -->
+      </div>
     </div>
   </section>
 </template>
