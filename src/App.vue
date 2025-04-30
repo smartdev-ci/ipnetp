@@ -4,11 +4,11 @@ import TheFooter from './components/layout/TheFooter.vue';
 import HeroSection from './components/home/HeroSection.vue';
 import FlashSection from './components/home/FlashSection.vue';
 import WhyEducat from './components/home/WhyEducat.vue';
-import CoursesSection from './components/courses/CoursesSection.vue';
-import StatsSection from './components/stats/StatsSection.vue';
+// import CoursesSection from './components/courses/CoursesSection.vue';
+// import StatsSection from './components/stats/StatsSection.vue';
 import NewsSection from './components/news/NewsSection.vue';
 import LibrarySection from './components/products/LibrarySection.vue';
-import TestimonialsSection from './components/testimonials/TestimonialsSection.vue';
+// import TestimonialsSection from './components/testimonials/TestimonialsSection.vue';
 import EventsSection from './components/events/EventsSection.vue';
 </script>
 
