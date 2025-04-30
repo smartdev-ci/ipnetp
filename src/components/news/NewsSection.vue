@@ -16,7 +16,7 @@ onMounted(() => {
     <div class="container">
       <SectionHeader 
         title="ACTUALITÉS RÉCENTES" 
-        subtitle="Stay updated with the latest educational insights and developments" 
+        subtitle="Restez continuellement informer sur les actualités de notre institut" 
       />
 
       <div class="news-grid grid-2">

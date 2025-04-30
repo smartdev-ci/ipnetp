@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import StarRating from '../common/StarRating.vue';
-
 defineProps({
   product: {
     type: Object,
@@ -12,120 +10,107 @@ defineProps({
 <template>
   <div class="product-card card">
     <div class="product-image">
-      <img :src="product.image" :alt="product.title" />
+      <template v-if="product.thumbnail.includes('docs.google.com')">
+        <iframe
+          :src="product.thumbnail"
+          frameborder="0"
+          class="pdf-preview"
+        ></iframe>
+      </template>
+      <template v-else>
+        <img :src="product.thumbnail" :alt="product.title" class="product-img" />
+      </template>
+
       <div class="product-overlay">
-        <button class="action-button">
-          <span class="material-icons">shopping_cart</span>
-        </button>
-        <button class="action-button">
-          <span class="material-icons">favorite</span>
-        </button>
-        <button class="action-button">
-          <span class="material-icons">visibility</span>
-        </button>
+        
       </div>
     </div>
     <div class="product-content">
       <h3 class="product-title">{{ product.title }}</h3>
-      <div class="product-rating">
-        <StarRating :rating="product.rating" />
-      </div>
-      <div class="product-price">${{ product.price.toFixed(2) }}</div>
-      <button class="btn btn-primary">Add to Cart</button>
+      <div class="product-price">Télécharger</div>
+      <a :href="product.link" target="_blank" class="btn btn-primary">Voir PDF</a>
     </div>
   </div>
 </template>
 
 <style scoped>
 .product-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  width: 220px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .product-image {
   position: relative;
+  height: 150px;
   overflow: hidden;
-  background-color: var(--background-off-white);
-  padding: var(--space-md);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
 }
 
-.product-image img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  transition: transform var(--transition-normal);
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pdf-preview {
+  width: 100%;
+  height: 100%;
 }
 
 .product-overlay {
   position: absolute;
-  bottom: -50px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: var(--space-sm);
-  transition: bottom var(--transition-normal);
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: var(--space-sm) 0;
-}
-
-.product-card:hover .product-overlay {
-  bottom: 0;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .action-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: var(--background-light);
-  color: var(--secondary-color);
-  border: none;
-  cursor: pointer;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
-}
-
-.action-button:hover {
-  background-color: var(--primary-color);
-  color: var(--text-white);
+  color: #fff;
+  font-size: 18px;
 }
 
 .product-content {
-  padding: var(--space-md);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  flex: 1;
+  padding: 15px;
 }
 
 .product-title {
-  margin: 0;
-  font-size: 1.1rem;
-  color: var(--secondary-color);
-}
-
-.product-rating {
-  display: flex;
-  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
 }
 
 .product-price {
-  font-weight: 700;
-  color: var(--primary-color);
-  font-size: 1.2rem;
-  margin-bottom: var(--space-sm);
+  font-size: 0.875rem;
+  color: #666;
+  margin: 5px 0;
 }
 
-.product-card .btn {
-  margin-top: auto;
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.875rem;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
 }
 </style>

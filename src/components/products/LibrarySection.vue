@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import SectionHeader from '../common/SectionHeader.vue';
 import ProductCard from './ProductCard.vue';
 
@@ -9,38 +10,17 @@ import 'swiper/css/pagination';
 import SwiperCore from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
+import { useReviewStore } from '../../stores/reviewStore';
+
+// Utilisation des modules Swiper
 SwiperCore.use([Navigation, Pagination]);
 
-const products = [
-  {
-    id: 1,
-    title: 'The Product Here',
-    price: 9.99,
-    rating: 4.5,
-    image: 'https://images.pexels.com/photos/256450/pexels-photo-256450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 2,
-    title: 'The Product Here',
-    price: 19.99,
-    rating: 4.0,
-    image: 'https://images.pexels.com/photos/3205579/pexels-photo-3205579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 3,
-    title: 'The Product Here',
-    price: 24.99,
-    rating: 4.8,
-    image: 'https://images.pexels.com/photos/714701/pexels-photo-714701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 4,
-    title: 'The Product Here',
-    price: 7.99,
-    rating: 4.2,
-    image: 'https://images.pexels.com/photos/5238119/pexels-photo-5238119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  }
-];
+const reviewStore = useReviewStore();
+
+// Récupérer les revues lors du montage du composant
+onMounted(() => {
+  reviewStore.fetchReviews();
+});
 </script>
 
 <template>
@@ -48,19 +28,21 @@ const products = [
     <div class="container">
       <SectionHeader 
         title="Nos revues IPNETP" 
-        subtitle="Discover resources to enhance your learning journey" 
+        subtitle="Découvrez des ressources pour améliorer votre parcours d'apprentissage" 
       />
 
+      <!-- Swiper pour les revues -->
       <Swiper
-        :slides-per-view="3"
+        :slides-per-view="4"
         :space-between="30"
         :loop="true"
         :navigation="true"
         :pagination="{ clickable: true }"
         class="library-swiper"
       >
-        <SwiperSlide v-for="product in products" :key="product.id">
-          <ProductCard :product="product" />
+        <!-- Pour chaque revue, affichage dans un SwiperSlide -->
+        <SwiperSlide v-for="review in reviewStore.reviews" :key="review.id">
+          <ProductCard :product="review" />
         </SwiperSlide>
       </Swiper>
     </div>
@@ -69,10 +51,16 @@ const products = [
 
 <style scoped>
 .library-section {
-  background-color: var(--background-light);
+  margin-top: 20px;
 }
 
 .library-swiper {
-  padding: 2rem 0;
+  margin-top: 40px;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 </style>
