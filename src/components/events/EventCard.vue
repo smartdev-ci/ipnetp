@@ -11,17 +11,17 @@
       <h3 class="event-title">{{ event.title }}</h3>
       <div class="event-details">
         <div class="event-detail">
-          <span class="material-icons">access_time</span>
-          <span>{{ event.time }}</span>
+          <!-- <span class="material-icons">access_time</span>
+          <span>{{ event.time }}</span> -->
         </div>
         <div class="event-detail">
-          <span class="material-icons">location_on</span>
-          <span>{{ event.location }}</span>
+          <!-- <span class="material-icons">location_on</span>
+          <span>{{ event.location }}</span> -->
         </div>
       </div>
       <p class="event-description">{{ event.description }}</p>
       <div class="event-button">
-        <AppButton text="LEARN NOW" type="primary" href="#" />
+        <AppButton text="En savoir plus" type="primary" href="#" />
       </div>
     </div>
   </div>

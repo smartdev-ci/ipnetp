@@ -112,6 +112,9 @@ const menu = [
 </script>
 
 <style scoped>
+li {
+  style-type: none;
+}
 .header {
   background-color: var(--background-light);
   position: fixed;

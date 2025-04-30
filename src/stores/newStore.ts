@@ -7,16 +7,11 @@ function decodeHtmlEntities(html: string): string {
   return txt.value;
 }
 
-interface NewsItem {
-  title: string;
-  date: string;
-  image: string;
-  categories: string[];
-}
-
 export const useNewsStore = defineStore('news', {
   state: () => ({
-    news: [] as NewsItem[],
+    news: [] as any[],
+    formationNews: [] as any[], // ✅ Ajouter la propriété pour les news de formation
+    isLoaded: false, // ✅ à ajouter
   }),
   actions: {
     async fetchNews() {
@@ -36,6 +31,30 @@ export const useNewsStore = defineStore('news', {
         }));
       } catch (error) {
         console.error('Erreur lors de la récupération des actualités:', error);
+      } finally {
+        this.isLoaded = true; // ✅ important
+      }
+    },
+    async fetchNewsByCategory(categoryId: number) {
+      try {
+        const response = await axios.get(
+          `https://ipnetp.ci/wp-json/wp/v2/posts?categories=${categoryId}&per_page=4&orderby=date&order=desc&_embed`
+        );
+        this.formationNews = response.data.map((post: any) => ({
+          title: decodeHtmlEntities(post.title.rendered),
+          date: {
+            day: new Date(post.date).getDate().toString(),
+            month: new Date(post.date).toLocaleString('default', { month: 'short' }),
+          },
+          image:
+            post.jetpack_featured_media_url ||
+            post._embedded['wp:featuredmedia']?.[0]?.source_url ||
+            'https://placehold.co/600x400',
+          categories:
+            post._embedded['wp:term']?.[0]?.map((cat: any) => cat.name) || [],
+        }));
+      } catch (error) {
+        console.error('Erreur lors de la récupération des actualités de la catégorie:', error);
       }
     },
   },
