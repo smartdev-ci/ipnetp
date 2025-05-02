@@ -18,8 +18,7 @@
   height: 90vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, -0.5), rgba(0, 0, 0, 0.5)), 
-              url('https://ipnetp.ci/wp-content/uploads/2025/04/1-scaled.png');
+  background: url('https://ipnetp.ci/wp-content/uploads/2025/04/1-scaled.png');
   background-size: cover;
   background-position: center;
   position: relative;

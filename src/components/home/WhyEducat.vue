@@ -10,15 +10,19 @@ import AppButton from '../common/AppButton.vue'
     <div class="why-educat-content">
       <div class="why-educat-text">
         <p>
-          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
-          some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
-          to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
-          text amr songr balga ami toami valo lasi ciri din akr dali
+          L’IPNETP est la référence nationale en formation de formateurs pour l’enseignement technique et professionnel.
+          Grâce à son expertise reconnue, ses programmes de qualité et son ouverture à l’innovation pédagogique,
+          l’Institut prépare efficacement ses apprenants aux exigences du terrain.
+          <br>
+          Choisir l’IPNETP, c’est investir dans une formation solide, orientée vers l’emploi et le développement des
+          compétences.
         </p>
         <AppButton text="En savoir plus" type="primary" href="#" />
       </div>
       <div class="why-educat-image">
-        <img src="https://ipnetp.ci/wp-content/uploads/slider/cache/c3bf1008026890e2e7f32d3dfcbf5688/Capture-decran-2025-04-21-a-6.25.08%E2%80%AFPM.png" alt="Students" />
+        <img
+          src="https://ipnetp.ci/wp-content/uploads/slider/cache/c3bf1008026890e2e7f32d3dfcbf5688/Capture-decran-2025-04-21-a-6.25.08%E2%80%AFPM.png"
+          alt="Students" />
       </div>
     </div>
   </section>
@@ -65,6 +69,7 @@ import AppButton from '../common/AppButton.vue'
 
 .why-educat-text p {
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .why-educat-image {
