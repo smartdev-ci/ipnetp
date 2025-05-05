@@ -4,10 +4,10 @@
       <nav class="navbar">
         <!-- LOGO -->
         <div class="logo">
-          <a href="#">
+          <a href="/">
             <img src="https://images.pexels.com/photos/5428258/pexels-photo-5428258.jpeg" alt="Logo"
               class="logo-placeholder" />
-            <span>IP<strong>NETP</strong></span>
+            <span><strong>IPNETP</strong></span>
           </a>
         </div>
 
@@ -45,10 +45,10 @@
           </li>
           <li class="language-switcher">
             <button @click="setLanguage('fr')" class="lang-flag" aria-label="Français">
-              🇫🇷
+              <img src="/flags/fr_flag.webp" alt="Français" class="flag-icon" />
             </button>
             <button @click="setLanguage('en')" class="lang-flag" aria-label="English">
-              🇺🇸
+              <img src="/flags/us_flag.png" alt="English" class="flag-icon" />
             </button>
           </li>
         </ul>
@@ -157,6 +157,20 @@ const setLanguage = (lang: string) => {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
+}
+.flag-icon {
+  width: 24px;
+  height: auto;
+  display: block;
+}
+
+.lang-flag {
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .flag-icon {
+    width: 32px;
+  }
 }
 
 .lang-flag {

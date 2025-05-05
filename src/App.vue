@@ -1,7 +1,24 @@
+<template>
+  <div v-if="isLoading" class="loadingScreen">
+    <h3 class="loadingScreen__text">
+      <span v-for="(letter, index) in 'IPNETP'" :key="index" class="loadingScreen__text__span"
+        :style="{ animationDelay: `${index * 100}ms` }">
+        {{ letter }}
+      </span>
+    </h3>
+  </div>
+
+  <div v-else class="app">
+    <TheNavbar />
+    <RouterView />
+    <TheFooter />
+  </div>
+</template>
 <script setup lang="ts">
 import { onMounted, computed } from 'vue';
 import { useReviewStore } from './stores/reviewStore';
 import { useNewsStore } from './stores/newStore';
+import {RouterView } from 'vue-router'
 
 import TheNavbar from './components/layout/TheNavbar.vue';
 import TheFooter from './components/layout/TheFooter.vue';
@@ -26,34 +43,6 @@ onMounted(async () => {
   }
 });
 </script>
-
-<template>
-  <div v-if="isLoading" class="loadingScreen">
-    <h3 class="loadingScreen__text">
-      <span v-for="(letter, index) in 'IPNETP'" :key="index" class="loadingScreen__text__span"
-        :style="{ animationDelay: `${index * 100}ms` }">
-        {{ letter }}
-      </span>
-    </h3>
-  </div>
-
-  <div v-else class="app">
-    <TheNavbar />
-
-    <main>
-      <HeroSection />
-      <FlashSection />
-      <WhyEducat />
-      <NewsSection />
-      <LibrarySection />
-      <EventsSection />
-    </main>
-
-    <TheFooter />
-    <RouterView/>
-  </div>
-</template>
-
 <style>
 [v-cloak] { display: none; }
 
