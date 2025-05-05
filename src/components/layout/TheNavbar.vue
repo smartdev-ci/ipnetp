@@ -5,7 +5,8 @@
         <!-- LOGO -->
         <div class="logo">
           <a href="#">
-            <img src="https://images.pexels.com/photos/5428258/pexels-photo-5428258.jpeg" alt="Logo" class="logo-placeholder" />
+            <img src="https://images.pexels.com/photos/5428258/pexels-photo-5428258.jpeg" alt="Logo"
+              class="logo-placeholder" />
             <span>IP<strong>NETP</strong></span>
           </a>
         </div>
@@ -19,18 +20,10 @@
 
         <!-- NAV LINKS -->
         <ul class="nav-links" :class="{ active: isMenuOpen }">
-          <li
-            v-for="(item, index) in menu"
-            :key="index"
-            class="nav-item"
-            @mouseenter="desktopOpen(index)"
-            @mouseleave="desktopClose(index)"
-          >
+          <li v-for="(item, index) in menu" :key="index" class="nav-item" @mouseenter="desktopOpen(index)"
+            @mouseleave="desktopClose(index)">
             <!-- TOP LEVEL LINK (no router-link here) -->
-            <div
-              v-if="!item.children"
-              class="nav-link-wrapper"
-            >
+            <div v-if="!item.children" class="nav-link-wrapper">
               <router-link :to="item.link" class="nav-link">
                 {{ item.title }}
               </router-link>
@@ -40,20 +33,23 @@
             <div v-else class="nav-link-wrapper" @click="toggleMobileDropdown(index)">
               <span class="nav-link">
                 {{ item.title }}
-                <span class="arrow">▾</span>
               </span>
             </div>
 
             <!-- DROPDOWN MENU -->
-            <ul
-              v-if="item.children"
-              class="dropdown"
-              :class="{ open: isDropdownOpen(index) }"
-            >
+            <ul v-if="item.children" class="dropdown" :class="{ open: isDropdownOpen(index) }">
               <li v-for="(child, cIndex) in item.children" :key="cIndex">
                 <router-link :to="child.link" class="dropdown-link">{{ child.title }}</router-link>
               </li>
             </ul>
+          </li>
+          <li class="language-switcher">
+            <button @click="setLanguage('fr')" class="lang-flag" aria-label="Français">
+              🇫🇷
+            </button>
+            <button @click="setLanguage('en')" class="lang-flag" aria-label="English">
+              🇺🇸
+            </button>
           </li>
         </ul>
       </nav>
@@ -144,19 +140,59 @@ const menu = [
     link: '/contacts' // Link for the "Contacts" item
   }
 ];
+
+const setLanguage = (lang: string) => {
+  // À adapter selon votre système de traduction (ex : vue-i18n)
+  // Exemple avec vue-i18n :
+  // locale.value = lang;
+
+  console.log(`Langue changée en : ${lang}`);
+};
+
 </script>
 
 <style scoped>
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.lang-flag {
+  font-size: 1.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.lang-flag:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    padding-left: 1rem;
+    width: 100%;
+  }
+
+  .lang-flag {
+    font-size: 1.5rem;
+  }
+}
+
 li {
   list-style: none;
 }
+
 .header {
   background-color: var(--background-light);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
@@ -207,9 +243,11 @@ li {
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translateY(8px);
 }
+
 .menu-toggle.active span:nth-child(2) {
   opacity: 0;
 }
+
 .menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translateY(-8px);
 }
@@ -263,7 +301,7 @@ li {
   min-width: 220px;
   display: none;
   flex-direction: column;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
   border-radius: 6px;
   z-index: 999;
@@ -281,7 +319,8 @@ li {
 .dropdown-link {
   display: inline-block;
   padding: 0.5rem 1rem;
-  margin: 0.25rem 0; /* espacements verticaux */
+  margin: 0.25rem 0;
+  /* espacements verticaux */
   color: var(--text-dark);
   text-decoration: none;
   font-weight: 500;
@@ -325,7 +364,7 @@ li {
     height: 100vh;
     padding: 5rem 1rem 1rem;
     transition: right 0.3s ease;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.active {
@@ -357,4 +396,3 @@ li {
   }
 }
 </style>
-
