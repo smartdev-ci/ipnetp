@@ -26,12 +26,22 @@
             @mouseenter="desktopOpen(index)"
             @mouseleave="desktopClose(index)"
           >
-            <!-- TOP LEVEL LINK -->
-            <div class="nav-link-wrapper" @click="toggleMobileDropdown(index)">
-              <a href="#" class="nav-link">
+            <!-- TOP LEVEL LINK (no router-link here) -->
+            <div
+              v-if="!item.children"
+              class="nav-link-wrapper"
+            >
+              <router-link :to="item.link" class="nav-link">
                 {{ item.title }}
-                <span v-if="item.children" class="arrow">▾</span>
-              </a>
+              </router-link>
+            </div>
+
+            <!-- PARENT ITEM WITH CHILDREN (no link) -->
+            <div v-else class="nav-link-wrapper" @click="toggleMobileDropdown(index)">
+              <span class="nav-link">
+                {{ item.title }}
+                <span class="arrow">▾</span>
+              </span>
             </div>
 
             <!-- DROPDOWN MENU -->
@@ -41,20 +51,18 @@
               :class="{ open: isDropdownOpen(index) }"
             >
               <li v-for="(child, cIndex) in item.children" :key="cIndex">
-                <a href="#" class="dropdown-link">{{ child }}</a>
+                <router-link :to="child.link" class="dropdown-link">{{ child.title }}</router-link>
               </li>
             </ul>
           </li>
         </ul>
-
       </nav>
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-// import { ref, computed } from 'vue';
-import {ref} from 'vue';
+import { ref } from 'vue';
 
 const isMenuOpen = ref(false);
 const dropdownStates = ref<Record<number, boolean>>({});
@@ -79,41 +87,68 @@ const desktopClose = (index: number) => {
 
 const isDropdownOpen = (index: number) => !!dropdownStates.value[index];
 
+// Update menu items to remove links for parent items with children
 const menu = [
   {
     title: 'Notre institut',
-    children: ['Mot de la directrice', 'Organisation']
+    children: [
+      { title: 'Mot de la directrice', link: '/direction' },
+      { title: 'Organisation', link: '/direction/organisation' }
+    ]
   },
   {
     title: 'Formation',
-    children: ['Formation initiale', 'Formation continue', 'Demande d\'adhésion', 'Nos spécialités', 'Nos diplômes']
+    children: [
+      { title: 'Formation initiale', link: '/formation/initiale' },
+      { title: 'Formation continue', link: '/formation/continue' },
+      { title: 'Demande d\'adhésion', link: '/formation/adhesion' },
+      { title: 'Nos spécialités', link: '/formation/specialites' },
+      { title: 'Nos diplômes', link: '/formation/diplomes' }
+    ]
   },
   {
     title: 'Activités & Services',
-    children: ['IFEF', 'e-courrier', 'GRH']
+    children: [
+      { title: 'IFEF', link: '/activites/ife' },
+      { title: 'e-courrier', link: '/activites/e-courrier' },
+      { title: 'GRH', link: '/activites/grh' }
+    ]
   },
   {
     title: 'Actualités',
-    children: ['Actualités Générales', 'Actualités Formations', 'Événements à venir']
+    children: [
+      { title: 'Actualités Générales', link: '/actualites/general' },
+      { title: 'Actualités Formations', link: '/actualites/formations' },
+      { title: 'Événements à venir', link: '/actualites/evenements' }
+    ]
   },
   {
     title: 'Associations IPNETP',
-    children: ['Association des femmes', 'Mutuelle des agents', 'MORES-CI (Section IPNETP)']
+    children: [
+      { title: 'Association des femmes', link: '/associations/femmes' },
+      { title: 'Mutuelle des agents', link: '/associations/mutuelle' },
+      { title: 'MORES-CI (Section IPNETP)', link: '/associations/mores-ci' }
+    ]
   },
   {
     title: 'Documentation',
-    children: ['Centre de Recherche et de Production', 'Cellule des Recherches pour l\'anglais', 'Revue IPNETP', 'Bibliothèque']
+    children: [
+      { title: 'Centre de Recherche et de Production', link: '/documentation/centre-recherche' },
+      { title: 'Cellule des Recherches pour l\'anglais', link: '/documentation/anglais' },
+      { title: 'Revue IPNETP', link: '/documentation/revue' },
+      { title: 'Bibliothèque', link: '/documentation/bibliotheque' }
+    ]
   },
   {
-    title: 'Contacts'
+    title: 'Contacts',
+    link: '/contacts' // Link for the "Contacts" item
   }
 ];
-
 </script>
 
 <style scoped>
 li {
-  style-type: none;
+  list-style: none;
 }
 .header {
   background-color: var(--background-light);
@@ -322,3 +357,4 @@ li {
   }
 }
 </style>
+

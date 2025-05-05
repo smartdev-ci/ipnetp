@@ -15,12 +15,15 @@ import EventsSection from './components/events/EventsSection.vue';
 const reviewStore = useReviewStore();
 const newsStore = useNewsStore();
 
-// Le loader s'affiche tant qu'une des ressources n'est pas chargée
 const isLoading = computed(() => !reviewStore.isLoaded || !newsStore.isLoaded);
 
-onMounted(() => {
-  reviewStore.fetchReviews();
-  newsStore.fetchNews();
+onMounted(async () => {
+  try {
+    await reviewStore.fetchReviews();
+    await newsStore.fetchNews();
+  } catch (error) {
+    console.error("Erreur lors du chargement des données :", error);
+  }
 });
 </script>
 
@@ -47,11 +50,13 @@ onMounted(() => {
     </main>
 
     <TheFooter />
+    <RouterView/>
   </div>
 </template>
 
 <style>
 [v-cloak] { display: none; }
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -61,6 +66,7 @@ onMounted(() => {
 main {
   flex: 1;
 }
+
 .loadingScreen {
   position: fixed;
   height: 100%;

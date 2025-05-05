@@ -26,20 +26,25 @@ onMounted(() => {
 <template>
   <section class="library-section section">
     <div class="container">
-      <SectionHeader 
-        title="Nos revues IPNETP" 
-        subtitle="Découvrez des ressources pour améliorer votre parcours d'apprentissage" 
-      />
+      <SectionHeader title="Nos revues IPNETP"
+        subtitle="Découvrez des ressources pour améliorer votre parcours d'apprentissage" />
 
       <!-- Swiper pour les revues -->
-      <Swiper
-        :slides-per-view="4"
-        :space-between="30"
-        :loop="true"
-        :navigation="true"
-        :pagination="{ clickable: true }"
-        class="library-swiper"
-      >
+      <Swiper :slides-per-view="4" :space-between="30" :loop="true" :navigation="true" :pagination="{ clickable: true }"
+        class="library-swiper" :breakpoints="{
+          0: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          1280: {
+            slidesPerView: 4,
+          }
+        }">
         <!-- Pour chaque revue, affichage dans un SwiperSlide -->
         <SwiperSlide v-for="review in reviewStore.reviews" :key="review.id">
           <ProductCard :product="review" />
