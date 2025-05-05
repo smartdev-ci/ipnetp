@@ -12,6 +12,7 @@
     <TheNavbar />
     <RouterView />
     <TheFooter />
+    <ChatBot />
   </div>
 </template>
 <script setup lang="ts">
@@ -22,12 +23,7 @@ import {RouterView } from 'vue-router'
 
 import TheNavbar from './components/layout/TheNavbar.vue';
 import TheFooter from './components/layout/TheFooter.vue';
-import HeroSection from './components/home/HeroSection.vue';
-import FlashSection from './components/home/FlashSection.vue';
-import WhyEducat from './components/home/WhyEducat.vue';
-import NewsSection from './components/news/NewsSection.vue';
-import LibrarySection from './components/products/LibrarySection.vue';
-import EventsSection from './components/events/EventsSection.vue';
+import ChatBot from './components/plugins/ChatBot.vue';
 
 const reviewStore = useReviewStore();
 const newsStore = useNewsStore();

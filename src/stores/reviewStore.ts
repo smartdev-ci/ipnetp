@@ -3,6 +3,7 @@ import { ref } from 'vue';
 
 export const useReviewStore = defineStore('review', () => {
   const reviews = ref<any[]>([]);
+  const specialities = ref<any[]>([]);
   const isLoaded = ref(false); // ✅ à ajouter
 
   async function fetchReviews() {
@@ -26,7 +27,7 @@ export const useReviewStore = defineStore('review', () => {
     } catch (error) {
       console.error('Erreur lors de la récupération des revues:', error);
     } finally {
-      isLoaded.value = true; // ✅ très important !
+      isLoaded.value = true; 
     }
   }
 
@@ -40,5 +41,20 @@ export const useReviewStore = defineStore('review', () => {
     }
   }
 
-  return { reviews, fetchReviews, isLoaded };
+  async function getAllSpecialties() {
+    try { 
+      const response = await fetch('https://ipnetp.ci/wp-json/wp/v2/posts?categories=678') ;
+      const data = await response.json();
+      specialities.value = data.map((speciality: any) => ({
+        id: speciality.id,
+        title: speciality.title.rendered,
+      }))
+    } catch(error) { 
+      console.error('Erreur lors de la recuperation des spécialités')
+    } finally {
+      isLoaded.value = true; 
+    }
+  }
+
+  return { reviews, fetchReviews, isLoaded, specialities, getAllSpecialties};
 });

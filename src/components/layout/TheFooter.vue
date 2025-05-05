@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import AppButton from '../common/AppButton.vue';
+import { onMounted } from 'vue';
+import { useReviewStore } from "../../stores/reviewStore";
+
+const reviewStore = useReviewStore();
 
 const footerLinks = {
   company: [
@@ -19,19 +23,26 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: 'facebook', href: '#' },
-  { icon: 'twitter', href: '#' },
-  { icon: 'instagram', href: '#' },
-  { icon: 'linkedin', href: '#' },
-  { icon: 'youtube', href: '#' }
+  { icon: 'fab fa-facebook-f', href: 'https://www.facebook.com/ipnetp225' },
+  { icon: 'fab fa-twitter', href: 'https://x.com/i/flow/login?redirect_after_login=%2Fipnetp' },
+  { icon: 'fab fa-instagram', href: '#' },
+  { icon: 'fab fa-linkedin-in', href: '#' },
+  { icon: 'fab fa-youtube', href: 'https://www.youtube.com/watch?v=NyOMnTtldkI&t=4s' }
 ];
 
-const instagramFeed = [
-  'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  'https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  'https://images.pexels.com/photos/3769714/pexels-photo-3769714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  'https://images.pexels.com/photos/4778621/pexels-photo-4778621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+const partners = [
+  "https://ipnetp.ci/wp-content/uploads/2023/12/p1.png",
+  "https://ipnetp.ci/wp-content/uploads/2023/12/p6.png",
+  "https://ipnetp.ci/wp-content/uploads/2023/12/p3.png",
+  "https://ipnetp.ci/wp-content/uploads/2023/12/p2.png",
+  "https://ipnetp.ci/wp-content/uploads/2023/12/p5.png",
+  "https://ipnetp.ci/wp-content/uploads/2023/12/p4.png",
+  "https://ipnetp.ci/wp-content/uploads/2023/12/p7.png"
 ];
+
+onMounted(() => {
+  reviewStore.getAllSpecialties()
+})
 </script>
 
 <template>
@@ -47,41 +58,38 @@ const instagramFeed = [
         </div>
       </div>
     </div>
-    
+
     <div class="footer-main">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-column">
             <div class="footer-logo">
-              <span>IPNETP</span>
+              <img class="img-footer" src="https://ipnetp.ci/wp-content/uploads/2023/12/cropped-images-1-1-300x300.png"
+                alt="">
             </div>
-            <p>Transform your learning experience with our comprehensive educational platform. Join thousands of students worldwide.</p>
+            <!-- <p>Transform your learning experience with our comprehensive educational platform. Join thousands of students worldwide.</p> -->
             <div class="contact-info">
-              <p><strong>Phone:</strong> +1 (234) 567-8900</p>
-              <p><strong>Email:</strong> info@educat.com</p>
-              <p><strong>Address:</strong> 123 Education St, Learning City</p>
+              <p><strong>Phone 1:</strong> +225 27 22 44 67 69</p>
+              <p><strong>Phone 2:</strong> +225 27 22 48 50 35</p>
+              <p><strong>Boite Postale: </strong>08 BP 2098 ABIDJAN 08, Abidjan, Côte d’Ivoire</p>
             </div>
             <div class="social-links">
-              <a v-for="(link, index) in socialLinks" :key="index" :href="link.href" class="social-icon">
-                <span class="material-icons">{{ link.icon }}</span>
+              <a v-for="(link, index) in socialLinks" :key="index" :href="link.href" class="social-icon" target="_blank">
+                <i :class="link.icon"></i>
               </a>
             </div>
           </div>
-          
+
           <div class="footer-column">
-            <h4>USEFUL LINKS</h4>
-            <ul class="footer-links">
-              <li v-for="(link, index) in footerLinks.usefulLinks" :key="index">
-                <a :href="link.href">{{ link.text }}</a>
-              </li>
+            <h4>Nos spécialités</h4>
+            <ul v-if="reviewStore.isLoaded" class="footer-links">
+              <li v-for="spec in reviewStore.specialities" :key="spec.id">{{ spec.title }}</li>
             </ul>
           </div>
-          
           <div class="footer-column">
-            <h4>INSTAGRAM</h4>
+            <h4>NOS PARTENAIRES</h4>
             <div class="instagram-feed">
-              <a v-for="(image, index) in instagramFeed" :key="index" 
-                 :href="'#'" class="instagram-item">
+              <a v-for="(image, index) in partners" :key="index" :href="'#'" class="instagram-item">
                 <img :src="image" alt="Instagram post" />
               </a>
             </div>
@@ -89,10 +97,10 @@ const instagramFeed = [
         </div>
       </div>
     </div>
-    
+
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2025 IPNETP. All rights reserved.</p>
+        <p>&copy; 2025 IPNETP. Tous droits reservés</p>
       </div>
     </div>
   </footer>
@@ -142,9 +150,10 @@ const instagramFeed = [
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-xl);
+  display: flex;
+  gap: 100px;
+  /* grid-template-columns: 1fr;
+  gap: var(--space-xl); */
 }
 
 .footer-logo {
@@ -168,6 +177,7 @@ const instagramFeed = [
 }
 
 .social-icon {
+  text-decoration: none;;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,7 +232,7 @@ const instagramFeed = [
 
 .instagram-feed {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-sm);
 }
 
@@ -230,6 +240,8 @@ const instagramFeed = [
   border-radius: var(--border-radius-sm);
   overflow: hidden;
   transition: transform var(--transition-fast);
+  width: 80%;
+  height: 100%;
 }
 
 .instagram-item:hover {
@@ -249,11 +261,16 @@ const instagramFeed = [
   text-align: center;
 }
 
+.img-footer {
+  height: 80px;
+  width: 120px;
+}
+
 @media (min-width: 768px) {
   .footer-grid {
     grid-template-columns: 2fr 1fr 1fr;
   }
-  
+
   .newsletter-content {
     flex-wrap: nowrap;
   }
