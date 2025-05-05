@@ -98,7 +98,7 @@
   .chat-box {
     position: fixed;
     bottom: 80px;
-    left: 20px;
+    right: 20px;
     width: 320px;
     height: 400px;
     background: white;
