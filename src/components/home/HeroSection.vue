@@ -18,7 +18,7 @@
   height: 90vh;
   display: flex;
   align-items: center;
-  background: url('/images/MECA_INDUS_LPS_DSC01742.jpg');
+  background: url('https://ipnetp.ci/wp-content/uploads/2025/04/1-scaled.png');
   background-size: cover;
   background-position: center;
   position: relative;
