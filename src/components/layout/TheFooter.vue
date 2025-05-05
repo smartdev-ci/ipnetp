@@ -5,23 +5,6 @@ import { useReviewStore } from "../../stores/reviewStore";
 
 const reviewStore = useReviewStore();
 
-const footerLinks = {
-  company: [
-    { text: 'About Us', href: '#' },
-    { text: 'Contact Us', href: '#' },
-    { text: 'Our Team', href: '#' },
-    { text: 'Privacy Policy', href: '#' },
-    { text: 'Terms of Service', href: '#' }
-  ],
-  usefulLinks: [
-    { text: 'How it works', href: '#' },
-    { text: 'FAQ', href: '#' },
-    { text: 'Student Resources', href: '#' },
-    { text: 'Become a Teacher', href: '#' },
-    { text: 'Careers', href: '#' }
-  ]
-};
-
 const socialLinks = [
   { icon: 'fab fa-facebook-f', href: 'https://www.facebook.com/ipnetp225' },
   { icon: 'fab fa-twitter', href: 'https://x.com/i/flow/login?redirect_after_login=%2Fipnetp' },
