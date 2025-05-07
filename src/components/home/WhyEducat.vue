@@ -34,7 +34,7 @@ import AppButton from '../common/AppButton.vue'
   color: #fff;
   padding: 0;
   /* overflow: hidden; */
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 .why-educat-header {

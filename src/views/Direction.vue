@@ -72,7 +72,7 @@
 
 <style>
 .page-container {
-  padding-top: 10%;
+  /* padding-top: 10%; */
   width: 80%;
   margin: 0 auto;
   font-family: sans-serif;
@@ -115,6 +115,7 @@
   display: flex;
   align-items: center;
   margin: 20px 0;
+  gap: 50px;
 
   .text-block {
     box-shadow: 0 0 35px 0 rgba(0, 0, 0, .09);
@@ -124,6 +125,7 @@
 
 .content.reverse {
   flex-direction: row-reverse;
+  gap: 50px;
 }
 
 .text-block {

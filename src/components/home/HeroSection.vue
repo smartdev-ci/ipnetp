@@ -14,6 +14,7 @@ defineProps<{
 
 <style scoped>
 .hero-section {
+  margin-top: 60px;
   height: 90vh;
   display: flex;
   align-items: center;
