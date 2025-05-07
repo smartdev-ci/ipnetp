@@ -1,7 +1,7 @@
 <!-- views/Home.vue -->
 <template>
   <main>
-    <HeroSection />
+    <HeroSection background="https://ipnetp.ci/wp-content/uploads/2025/04/1-scaled.png"/>
     <FlashSection />
     <WhyEducat />
     <NewsSection />

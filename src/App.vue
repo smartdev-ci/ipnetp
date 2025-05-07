@@ -13,6 +13,7 @@
     <RouterView />
     <TheFooter />
     <ChatBot />
+    <ContactFab />
   </div>
 </template>
 <script setup lang="ts">
@@ -24,6 +25,7 @@ import {RouterView } from 'vue-router'
 import TheNavbar from './components/layout/TheNavbar.vue';
 import TheFooter from './components/layout/TheFooter.vue';
 import ChatBot from './components/plugins/ChatBot.vue';
+import ContactFab from './components/plugins/ContactFab.vue';
 
 const reviewStore = useReviewStore();
 const newsStore = useNewsStore();
