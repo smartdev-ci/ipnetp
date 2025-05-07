@@ -20,7 +20,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(savedPosition) {
+  scrollBehavior(_to, _from, savedPosition) {
     // Si la navigation précédente a une position sauvegardée (ex: bouton retour), on la restaure
     if (savedPosition) {
       return savedPosition
