@@ -20,6 +20,15 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Si la navigation précédente a une position sauvegardée (ex: bouton retour), on la restaure
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      // Sinon, on scroll en haut de page
+      return { top: 0 }
+    }
+  },
 });
 
 export default router;
