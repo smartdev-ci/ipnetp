@@ -301,7 +301,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 
@@ -416,6 +416,7 @@ li {
 
   .nav-links.active {
     right: 0;
+    overflow: scroll;
   }
 
   .nav-item {
