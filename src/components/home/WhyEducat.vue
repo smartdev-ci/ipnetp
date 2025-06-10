@@ -39,7 +39,7 @@ import AppButton from '../common/AppButton.vue'
 
 .why-educat-header {
   background-color: #0f1e3d;
-  clip-path: polygon(0 0, 30% 0%, 35% 100%, 0% 100%);
+  clip-path: polygon(0 0, 450px 0%, 528px 100%, 0% 100%);
   padding: 1rem 3rem;
   font-size: 1.8rem;
   font-weight: bold;
@@ -85,8 +85,12 @@ import AppButton from '../common/AppButton.vue'
 
 @media (max-width: 768px) {
   .why-educat-header {
-    font-size: 1.4rem;
-    clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 55% 0, 65% 100%, 0% 100%);
+    font-size: 16px;
+  }
+  
+  .why-educat-header h2{
+    font-size: 1.3rem;
   }
 
   .why-educat-content {
@@ -99,4 +103,34 @@ import AppButton from '../common/AppButton.vue'
     max-width: 100%;
   }
 }
+
+@media (max-width: 468px) {
+  .why-educat-header {
+    clip-path: polygon(0 0, 55% 0, 65% 100%, 0% 100%);
+    font-size: 16px;
+  }
+  
+  .why-educat-header h2{
+    font-size: 1rem;
+  }
+
+  .why-educat-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+}
+
+
+@media (max-width: 418px) {
+  
+  .why-educat-header h2{
+    font-size: 0.7rem;
+  }
+
+  
+}
+
+
 </style>

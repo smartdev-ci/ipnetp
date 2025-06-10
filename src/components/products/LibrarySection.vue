@@ -30,7 +30,7 @@ onMounted(() => {
         subtitle="Découvrez des ressources pour améliorer votre parcours d'apprentissage" />
 
       <!-- Swiper pour les revues -->
-      <Swiper :slides-per-view="4" :space-between="30" :loop="true" :navigation="true" :pagination="{ clickable: true }"
+      <Swiper :slides-per-view="4" :space-between="45" :loop="true" :navigation="true" :pagination="{ clickable: true }"
         class="library-swiper" :breakpoints="{
           0: {
             slidesPerView: 1,
@@ -60,7 +60,7 @@ onMounted(() => {
 }
 
 .library-swiper {
-  margin-top: 40px;
+  padding:  45px 45px;
 }
 
 .product-card img {
@@ -68,4 +68,73 @@ onMounted(() => {
   height: auto;
   object-fit: cover;
 }
+
+
+@media (max-width: 1025px) {
+
+
+.library-swiper {
+  width: 70vw;
+}
+
+}
+
+@media (max-width: 880px) {
+
+
+.library-swiper {
+  width: 95vw;
+  padding-left: 15%;
+
+}
+
+
+}
+
+
+@media (max-width: 800px) {
+
+
+.library-swiper {
+  width: 95vw;
+  padding-left: 8%;
+
+}
+
+}
+
+@media (max-width: 640px) {
+
+
+.library-swiper {
+  width: 95vw;
+  padding-left: 25%;
+
+}
+
+}
+
+
+@media (max-width: 515px) {
+
+
+.library-swiper {
+  width: 90vw;
+  padding-left: 15%;
+
+}
+
+}
+
+@media (max-width: 375px) {
+
+
+.library-swiper {
+  width: 90vw;
+  padding-left: 8%;
+
+}
+
+}
+
 </style>

@@ -68,17 +68,17 @@ const toggleMenu = () => {
 };
 
 const toggleMobileDropdown = (index: number) => {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1200) {
     dropdownStates.value[index] = !dropdownStates.value[index];
   }
 };
 
 const desktopOpen = (index: number) => {
-  if (window.innerWidth > 768) dropdownStates.value[index] = true;
+  if (window.innerWidth > 12) dropdownStates.value[index] = true;
 };
 
 const desktopClose = (index: number) => {
-  if (window.innerWidth > 768) dropdownStates.value[index] = false;
+  if (window.innerWidth > 1200) dropdownStates.value[index] = false;
 };
 
 const isDropdownOpen = (index: number) => !!dropdownStates.value[index];
@@ -167,7 +167,7 @@ const setLanguage = (lang: string) => {
 .lang-flag {
   padding: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .flag-icon {
     width: 32px;
   }
@@ -185,7 +185,7 @@ const setLanguage = (lang: string) => {
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .language-switcher {
     padding-left: 1rem;
     width: 100%;
@@ -362,7 +362,7 @@ li {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .menu-toggle {
     display: flex;
   }

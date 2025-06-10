@@ -110,4 +110,14 @@ function startRotation() {
   transform: translateY(-100%);
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+
+
+.flash-section {
+  display: none;
+}
+
+}
+
 </style>

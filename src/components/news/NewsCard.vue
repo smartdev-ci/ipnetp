@@ -86,4 +86,29 @@ defineProps({
   display: flex;
   justify-content: flex-start;
 }
+
+
+@media (max-width: 518px) {
+  .news-card {
+    flex-direction: column;
+    width: 85vw;
+
+  }
+    .news-card {
+      width: 90vw;
+  }
+
+  .card-image {
+    width: 90vw;
+  }
+
+  .card-content {
+  width: 80vw;
+
+}
+
+
+}
+
+
 </style>

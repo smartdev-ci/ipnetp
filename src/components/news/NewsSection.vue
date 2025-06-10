@@ -42,6 +42,9 @@ onMounted(() => {
 <style scoped>
 .news-section {
   background-color: var(--background-off-white);
+  width: 100vw;
+  display: flex;
+  justify-content: start;
 }
 
 .news-grid {

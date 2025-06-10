@@ -93,6 +93,7 @@ onMounted(() => {
 .footer {
   background-color: var(--secondary-color);
   color: var(--text-white);
+  /* overflow: hidden; */
 }
 
 .newsletter-section {
@@ -258,4 +259,37 @@ onMounted(() => {
     flex-wrap: nowrap;
   }
 }
+
+
+@media (max-width: 980px) {
+
+
+.library-swiper {
+  width: 70vw;
+}
+
+.footer-grid {
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.footer-grid > div {
+  width: 80%;
+
+}
+
+}
+
+
+@media (max-width: 468px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+
+
+
 </style>
