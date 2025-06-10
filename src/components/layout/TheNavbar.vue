@@ -3,20 +3,19 @@
     <div class="container">
       <nav class="navbar">
         <!-- LOGO -->
-        <div class="logo">
+        <div class="logo border-2 border-red-400">
           <a href="/">
-            <img src="https://images.pexels.com/photos/5428258/pexels-photo-5428258.jpeg" alt="Logo"
-              class="logo-placeholder" />
-            <span><strong>IPNETP</strong></span>
+            <img src="/images/logo_ipnetp.png" alt="Logo"/>
           </a>
         </div>
 
         <!-- MENU TOGGLE (Mobile) -->
-        <div class="menu-toggle" :class="{ active: isMenuOpen }" @click="toggleMenu">
+        <div class="menu-toggle" :class="{ active: isMenuOpen }" @click="toggleMenu" style="z-index: 100">
           <span></span>
           <span></span>
           <span></span>
         </div>
+        
 
         <!-- NAV LINKS -->
         <ul class="nav-links" :class="{ active: isMenuOpen }">
@@ -43,22 +42,32 @@
               </li>
             </ul>
           </li>
-          <li class="language-switcher">
-            <button @click="setLanguage('fr')" class="lang-flag" aria-label="Français">
-              <img src="/flags/fr_flag.webp" alt="Français" class="flag-icon" />
-            </button>
-            <button @click="setLanguage('en')" class="lang-flag" aria-label="English">
-              <img src="/flags/us_flag.png" alt="English" class="flag-icon" />
-            </button>
-          </li>
         </ul>
       </nav>
+      <!-- OVERLAY SOMBRE -->
+    <div
+      v-if="isMenuOpen"
+      class="overlay fixed inset-0 bg-black bg-opacity-50 z-[99]"
+      @click="toggleMenu">
+      </div>
+
+      <div class="language-switcher">
+        <button  @click="setLanguage('fr')" class="lang-flag fr" aria-label="Français">
+          <span>FR</span>
+        </button>
+        <button @click="setLanguage('en')" class="lang-flag" aria-label="English">
+          <span>EN</span>
+        </button>
+      </div>
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+
+import { watch } from 'vue';
+
 
 const isMenuOpen = ref(false);
 const dropdownStates = ref<Record<number, boolean>>({});
@@ -72,6 +81,11 @@ const toggleMobileDropdown = (index: number) => {
     dropdownStates.value[index] = !dropdownStates.value[index];
   }
 };
+
+watch(isMenuOpen, (open) => {
+  document.body.style.overflow = open ? 'hidden' : 'auto';
+});
+
 
 const desktopOpen = (index: number) => {
   if (window.innerWidth > 12) dropdownStates.value[index] = true;
@@ -153,32 +167,38 @@ const setLanguage = (lang: string) => {
 
 <style scoped>
 .language-switcher {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
 }
-.flag-icon {
-  width: 24px;
-  height: auto;
-  display: block;
-}
+
 
 .lang-flag {
   padding: 0;
-}
-@media (max-width: 1200px) {
-  .flag-icon {
-    width: 32px;
-  }
-}
-
-.lang-flag {
-  font-size: 1.25rem;
+  font-size: 0.8rem;
   background: transparent;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease;
+  color: #3266ff;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
+.fr{
+  background-color: #3265ffac;
+  border-radius: 4px;
+  color: #fff;
+
 }
 
 .lang-flag:hover {
@@ -186,14 +206,13 @@ const setLanguage = (lang: string) => {
 }
 
 @media (max-width: 1200px) {
-  .language-switcher {
-    padding-left: 1rem;
-    width: 100%;
+  .flag-icon {
+    width: 32px;
   }
+}
 
-  .lang-flag {
-    font-size: 1.5rem;
-  }
+@media (max-width: 1200px) {
+
 }
 
 li {
@@ -201,12 +220,14 @@ li {
 }
 
 .header {
+  position: relative;
   background-color: var(--background-light);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding-right: 80px;
 }
 
 .navbar {
@@ -216,17 +237,26 @@ li {
   padding: var(--space-md) 0;
 }
 
+.logo{
+  width: 120px;
+  height: 45px;
+}
+
 .logo a {
-  display: flex;
-  align-items: center;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--text-dark);
 }
 
-.logo strong {
-  color: var(--primary-color);
+
+.logo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .logo-placeholder {
@@ -271,7 +301,10 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+  overflow: scroll;
 }
+
+
 
 .nav-item {
   position: relative;
