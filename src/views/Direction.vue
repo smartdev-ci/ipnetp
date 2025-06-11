@@ -67,7 +67,7 @@ h1 {
 }
 
 .page-container {
-  padding-top: 190px;
+  padding-top: 140px;
   width: 80%;
   margin: 0 auto;
   font-family: sans-serif;
@@ -117,7 +117,7 @@ h1 {
   justify-content: center;
   margin: 20px 0;
   gap: 50px;
-  padding-top: 140px;
+  padding-top: 70px;
 }
 
 .text-block {
@@ -167,7 +167,7 @@ h1 {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .content,
   .content.reverse {
     flex-direction: column;
