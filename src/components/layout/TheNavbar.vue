@@ -3,59 +3,95 @@
     <div class="container">
       <nav class="navbar">
         <!-- LOGO -->
-        <div class="logo border-2 border-red-400">
+        <div class="logo">
           <a href="/">
-            <img src="/images/logo_ipnetp.png" alt="Logo"/>
+            <img src="/images/logo_ipnetp.png" alt="Logo" />
           </a>
         </div>
 
         <!-- MENU TOGGLE (Mobile) -->
-        <div class="menu-toggle" :class="{ active: isMenuOpen }" @click="toggleMenu" style="z-index: 100">
+        <div
+          class="menu-toggle"
+          :class="{ active: isMenuOpen }"
+          @click="toggleMenu"
+          style="z-index: 100"
+        >
           <span></span>
           <span></span>
           <span></span>
         </div>
-        
 
         <!-- NAV LINKS -->
         <ul class="nav-links" :class="{ active: isMenuOpen }">
-          <li v-for="(item, index) in menu" :key="index" class="nav-item" @mouseenter="desktopOpen(index)"
-            @mouseleave="desktopClose(index)">
-            <!-- TOP LEVEL LINK (no router-link here) -->
-            <div v-if="!item.children" class="nav-link-wrapper">
+          <li
+            v-for="(item, index) in menu"
+            :key="index"
+            class="nav-item"
+            @mouseenter="desktopOpen(index)"
+            @mouseleave="desktopClose(index)"
+          >
+            <template v-if="item.children">
+              <div
+                class="nav-link-wrapper"
+                @click="toggleMobileDropdown(index)"
+              >
+                <span class="nav-link">{{ item.title }}</span>
+              </div>
+              <ul
+                v-if="item.children"
+                class="dropdown"
+                :class="{ open: isDropdownOpen(index) }"
+              >
+                <li v-for="(child, cIndex) in item.children" :key="cIndex">
+                  <template v-if="!child.external">
+                    <router-link :to="child.link" class="dropdown-link">
+                      {{ child.title }}
+                    </router-link>
+                  </template>
+                  <template v-else>
+                    <a
+                      :href="child.link"
+                      class="dropdown-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {{ child.title }}
+                    </a>
+                  </template>
+                </li>
+              </ul>
+            </template>
+
+            <template v-else>
               <router-link :to="item.link" class="nav-link">
                 {{ item.title }}
               </router-link>
-            </div>
-
-            <!-- PARENT ITEM WITH CHILDREN (no link) -->
-            <div v-else class="nav-link-wrapper" @click="toggleMobileDropdown(index)">
-              <span class="nav-link">
-                {{ item.title }}
-              </span>
-            </div>
-
-            <!-- DROPDOWN MENU -->
-            <ul v-if="item.children" class="dropdown" :class="{ open: isDropdownOpen(index) }">
-              <li v-for="(child, cIndex) in item.children" :key="cIndex">
-                <router-link :to="child.link" class="dropdown-link">{{ child.title }}</router-link>
-              </li>
-            </ul>
+            </template>
           </li>
         </ul>
       </nav>
-      <!-- OVERLAY SOMBRE -->
-    <div
-      v-if="isMenuOpen"
-      class="overlay fixed inset-0 bg-black bg-opacity-50 z-[99]"
-      @click="toggleMenu">
-      </div>
 
+      <!-- OVERLAY -->
+      <div
+        v-if="isMenuOpen"
+        class="overlay fixed inset-0 bg-black bg-opacity-50 z-[99]"
+        @click="toggleMenu"
+      ></div>
+
+      <!-- LANGUAGE SWITCHER -->
       <div class="language-switcher">
-        <button  @click="setLanguage('fr')" class="lang-flag fr" aria-label="Français">
+        <button
+          @click="setLanguage('fr')"
+          class="lang-flag fr"
+          aria-label="Français"
+        >
           <span>FR</span>
         </button>
-        <button @click="setLanguage('en')" class="lang-flag" aria-label="English">
+        <button
+          @click="setLanguage('en')"
+          class="lang-flag"
+          aria-label="English"
+        >
           <span>EN</span>
         </button>
       </div>
@@ -64,10 +100,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
-import { watch } from 'vue';
-
+import { ref, watch } from "vue";
 
 const isMenuOpen = ref(false);
 const dropdownStates = ref<Record<number, boolean>>({});
@@ -83,12 +116,11 @@ const toggleMobileDropdown = (index: number) => {
 };
 
 watch(isMenuOpen, (open) => {
-  document.body.style.overflow = open ? 'hidden' : 'auto';
+  document.body.style.overflow = open ? "hidden" : "auto";
 });
 
-
 const desktopOpen = (index: number) => {
-  if (window.innerWidth > 12) dropdownStates.value[index] = true;
+  if (window.innerWidth > 1200) dropdownStates.value[index] = true;
 };
 
 const desktopClose = (index: number) => {
@@ -97,72 +129,72 @@ const desktopClose = (index: number) => {
 
 const isDropdownOpen = (index: number) => !!dropdownStates.value[index];
 
-// Update menu items to remove links for parent items with children
 const menu = [
   {
-    title: 'Notre institut',
+    title: "Notre institut",
     children: [
-      { title: 'Mot de la directrice', link: '/direction' },
-      { title: 'Organisation', link: '/direction/organisation' }
-    ]
+      { title: "Mot de la directrice", link: "/direction" },
+      { title: "Organisation", link: "/direction/organisation" },
+    ],
   },
   {
-    title: 'Formation',
+    title: "Formation",
     children: [
-      { title: 'Formation initiale', link: '/formation/initiale' },
-      { title: 'Formation continue', link: '/formation/continue' },
-      { title: 'Demande d\'adhésion', link: '/formation/adhesion' },
-      { title: 'Nos spécialités', link: '/formation/specialites' },
-      { title: 'Nos diplômes', link: '/formation/diplomes' }
-    ]
+      { title: "Formation initiale", link: "/formation/initiale" },
+      { title: "Formation continue", link: "/formation/continue" },
+      { title: "Demande d'adhésion", link: "/formation/adhesion" },
+      { title: "Nos spécialités", link: "/formation/specialites" },
+      { title: "Nos diplômes", link: "/formation/diplomes" },
+    ],
   },
   {
-    title: 'Activités & Services',
+    title: "Activités & Services",
     children: [
-      { title: 'IFEF', link: '/activites/ife' },
-      { title: 'e-courrier', link: '/activites/e-courrier' },
-      { title: 'GRH', link: '/activites/grh' }
-    ]
+      { title: "IFEF", link: "https://ipnetp-ifef.com/", external: true },
+      { title: "e-courrier", link: "/" },
+      { title: "GRH", link: "/" },
+    ],
   },
   {
-    title: 'Actualités',
+    title: "Actualités",
     children: [
-      { title: 'Actualités Générales', link: '/actualites/general' },
-      { title: 'Actualités Formations', link: '/actualites/formations' },
-      { title: 'Événements à venir', link: '/actualites/evenements' }
-    ]
+      { title: "Actualités Générales", link: "/actualites/general" },
+      { title: "Actualités Formations", link: "/actualites/formations" },
+      { title: "Événements à venir", link: "/actualites/evenements" },
+    ],
   },
   {
-    title: 'Associations IPNETP',
+    title: "Associations IPNETP",
     children: [
-      { title: 'Association des femmes', link: '/associations/femmes' },
-      { title: 'Mutuelle des agents', link: '/associations/mutuelle' },
-      { title: 'MORES-CI (Section IPNETP)', link: '/associations/mores-ci' }
-    ]
+      { title: "Association des femmes", link: "/associations/femmes" },
+      { title: "Mutuelle des agents", link: "/associations/mutuelle" },
+      { title: "MORES-CI (Section IPNETP)", link: "/associations/mores-ci" },
+    ],
   },
   {
-    title: 'Documentation',
+    title: "Documentation",
     children: [
-      { title: 'Centre de Recherche et de Production', link: '/documentation/centre-recherche' },
-      { title: 'Cellule des Recherches pour l\'anglais', link: '/documentation/anglais' },
-      { title: 'Revue IPNETP', link: '/documentation/revue' },
-      { title: 'Bibliothèque', link: '/documentation/bibliotheque' }
-    ]
+      {
+        title: "Centre de Recherche et de Production",
+        link: "/documentation/centre-recherche",
+      },
+      {
+        title: "Cellule des Recherches pour l'anglais",
+        link: "/documentation/anglais",
+      },
+      { title: "Revue IPNETP", link: "/documentation/revue" },
+      { title: "Bibliothèque", link: "/documentation/bibliotheque" },
+    ],
   },
   {
-    title: 'Contacts',
-    link: '/contacts' // Link for the "Contacts" item
-  }
+    title: "Contacts",
+    link: "/contacts",
+  },
 ];
 
 const setLanguage = (lang: string) => {
-  // À adapter selon votre système de traduction (ex : vue-i18n)
-  // Exemple avec vue-i18n :
-  // locale.value = lang;
-
   console.log(`Langue changée en : ${lang}`);
 };
-
 </script>
 
 <style scoped>
