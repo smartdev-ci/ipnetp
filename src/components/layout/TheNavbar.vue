@@ -164,18 +164,18 @@ const menu = [
     ],
   },
   {
-    title: "Documentation",
+    title: "Recherche",
     children: [
       {
         title: "Centre de Recherche et de Production",
-        link: "/documentation/centre-recherche",
+        link: "/recherche/centre-recherche",
       },
       {
         title: "Cellule des Recherches pour l'anglais",
-        link: "/documentation/anglais",
+        link: "/recherche/anglais",
       },
-      { title: "Revue IPNETP", link: "/documentation/revue" },
-      { title: "Bibliothèque", link: "/documentation/bibliotheque" },
+      { title: "Revue IPNETP", link: "/recherche/revue" },
+      { title: "Bibliothèque", link: "/recherche/bibliotheque" },
     ],
   },
   {
@@ -259,7 +259,8 @@ li {
 
 .header {
   position: relative;
-  background-color: var(--background-light);
+  /* background-color: var(--background-light); */
+  background-color: white;
   position: fixed;
   width: 100%;
   top: 0;
@@ -280,15 +281,7 @@ li {
   height: 45px;
 }
 
-.logo a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--text-dark);
-}
+
 
 
 .logo img {
@@ -358,13 +351,13 @@ li {
 }
 
 .nav-link::after {
+  background-color: #007bff;
   content: '';
   position: absolute;
   left: 0;
   bottom: 5px;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color);
   transition: width 0.3s ease;
 }
 
@@ -419,7 +412,7 @@ li {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: #007bff;
   transition: width 0.3s ease;
 }
 

@@ -39,10 +39,4 @@ import EventsSection from "../components/events/EventsSection.vue";
   height: 100%;
   width: 100%;
 }
-
-@media (max-width: 505px) {
-  .concours225 {
-
-  }
-}
 </style>
