@@ -42,7 +42,7 @@ defineProps({
 .event-card {
   background: white;
   border: 1px solid #e0e0e0;
-  border-bottom: 4px solid #0f1e3d;
+  border-bottom: 4px solid #007bff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -71,7 +71,7 @@ defineProps({
   position: absolute;
   top: 12px;
   left: 12px;
-  background-color: #2e4356;
+  background-color: #007bff;
   color: white;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;

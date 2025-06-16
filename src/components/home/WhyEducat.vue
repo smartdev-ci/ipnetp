@@ -17,7 +17,7 @@ import AppButton from '../common/AppButton.vue'
           Choisir l’IPNETP, c’est investir dans une formation solide, orientée vers l’emploi et le développement des
           compétences.
         </p>
-        <AppButton text="En savoir plus" type="primary" href="#" />
+        <AppButton class="view_more" text="En savoir plus" type="primary" href="#" />
       </div>
       <div class="why-educat-image">
         <img
@@ -29,6 +29,16 @@ import AppButton from '../common/AppButton.vue'
 </template>
 
 <style scoped>
+
+.view_more{
+  background-color: #0f1e3d;
+}
+
+.view_more:hover{
+  background-color: #ffffff;
+  color: #0f1e3d;
+}
+
 .why-educat {
   background-color: #2e4356;
   color: #fff;

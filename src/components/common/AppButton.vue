@@ -23,4 +23,14 @@ defineProps({
 
 <style scoped>
 /* Button styles are defined in global.css */
+button{
+  background-color: #007bff;
+}
+a{
+    background-color: #007bff;
+}
+  button:hover, a:hover {
+    background-color: #0056b3;
+  }
+  
 </style>

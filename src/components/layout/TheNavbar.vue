@@ -217,7 +217,7 @@ const setLanguage = (lang: string) => {
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease;
-  color: #3266ff;
+  color: #007bff;
   width: 25px;
   height: 25px;
   display: flex;
@@ -227,7 +227,7 @@ const setLanguage = (lang: string) => {
 }
 
 .fr{
-  background-color: #3265ffac;
+  background-color: #007bff;
   border-radius: 4px;
   color: #fff;
 
