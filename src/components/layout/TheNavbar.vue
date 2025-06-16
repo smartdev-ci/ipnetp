@@ -156,14 +156,6 @@ const menu = [
     ],
   },
   {
-    title: "Actualités",
-    children: [
-      { title: "Actualités Générales", link: "/actualites/general" },
-      { title: "Actualités Formations", link: "/actualites/formations" },
-      { title: "Événements à venir", link: "/actualites/evenements" },
-    ],
-  },
-  {
     title: "Associations IPNETP",
     children: [
       { title: "Association des femmes", link: "/associations/femmes" },
@@ -187,6 +179,14 @@ const menu = [
     ],
   },
   {
+    title: "Actualités",
+    children: [
+      { title: "Actualités Générales", link: "/actualites/general" },
+      { title: "Actualités Formations", link: "/actualites/formations" },
+      { title: "Événements à venir", link: "/actualites/evenements" },
+    ],
+  },
+  {
     title: "Contacts",
     link: "/contacts",
   },
@@ -198,6 +198,12 @@ const setLanguage = (lang: string) => {
 </script>
 
 <style scoped>
+
+li{
+  cursor: default;
+}
+
+
 .language-switcher {
   position: absolute;
   top: 50%;
