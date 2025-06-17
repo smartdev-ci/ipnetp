@@ -131,6 +131,37 @@
         </div>
       </div>
     </section>
+
+    <!-- Section géolocalisation -->
+    <div class="map-section">
+      <div class="map-container">
+        <div class="map-header">
+          <!-- Icône localisation -->
+          <svg
+            class="map-icon"
+            viewBox="0 0 24 24"
+            fill="#007bff"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"
+            />
+          </svg>
+          <h2 class="map-title">Notre localisation</h2>
+        </div>
+        <p class="map-description">
+          Retrouvez-nous facilement grâce à la géolocalisation.
+        </p>
+        <a
+          href="https://mapcarta.com/fr/N5393357625"
+          class="map-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Voir la géolocalisation
+        </a>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -151,6 +182,8 @@ section > div {
 }
 
 .box-img {
+  display: flex;
+  flex-direction: column;
   width: 35%;
   height: 100%;
   gap: 20px;
@@ -158,6 +191,7 @@ section > div {
 .box-img .d1 {
   height: 60%;
   width: 100%;
+  border: 1px solid #474e5615;
 }
 
 .box-img .d2 {
@@ -168,7 +202,6 @@ section > div {
 }
 
 .box-img .d2 div {
-  height: 100%;
   width: 50%;
   gap: 20px;
   display: flex;
@@ -222,8 +255,8 @@ h1 {
 
 /* Style vidéo preview */
 
-.historique .box-img{
-    height: fit-content;
+.historique .box-img {
+  height: fit-content;
 }
 
 .video-section {
@@ -258,6 +291,79 @@ h1 {
   height: 100%;
   border: 0;
   display: block;
+}
+
+/* Style map section */
+
+.map-section {
+  background-color: #f4f9ff;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.map-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.1);
+  max-width: 700px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.map-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.map-icon {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.map-title {
+  color: #0f1e3d;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.map-description {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.map-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.map-button:hover {
+  background-color: #339eff;
+}
+
+@media (max-width: 480px) {
+  .map-title {
+    font-size: 1.25rem;
+  }
+
+  .map-button {
+    width: 100%;
+    padding: 0.75rem;
+  }
 }
 
 /* Responsivité */
