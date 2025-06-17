@@ -134,7 +134,7 @@ const menu = [
     title: "Notre institut",
     children: [
       { title: "Mot de la directrice", link: "/direction" },
-      { title: "Organisation", link: "/direction/organisation" },
+      { title: "Organisation", link: "/organisation" },
     ],
   },
   {

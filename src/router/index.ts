@@ -1,7 +1,8 @@
 // src/router/index.ts
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';  // Exemple de vue
-import Direction from '../views/Direction.vue';  // Exemple de vue
+import Home from '../views/Home.vue';  
+import Direction from '../views/Direction.vue'; 
+import Organisation from '../views/Organisation.vue'; 
 
 const routes = [
   {
@@ -14,7 +15,12 @@ const routes = [
     name: 'direction',
     component: Direction
   },
-  // Ajoute les autres routes de la même manière
+    {
+    path: '/organisation',
+    name: 'organisation',
+    component: Organisation
+  },
+  
 ];
 
 const router = createRouter({
