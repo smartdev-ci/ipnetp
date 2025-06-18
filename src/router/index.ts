@@ -5,7 +5,7 @@ import Direction from "../views/Direction.vue";
 import Organisation from "../views/Organisation.vue";
 import formationContinue from "../views/formation/FormationContinue.vue";
 import FormationInitiale from "../views/formation/FormationInitiale.vue";
-import Adhesion from "../views/formation/Adhesion.vue";
+import Admission from "../views/formation/Admission.vue";
 
 const routes = [
   {
@@ -34,9 +34,9 @@ const routes = [
     component: FormationInitiale,
   },
   {
-    path: "/formation/adhesion",
-    name: "Adhesion",
-    component: Adhesion,
+    path: "/formation/Admission",
+    name: "Admission",
+    component: Admission,
   },
 ];
 

@@ -142,7 +142,7 @@ const menu = [
     children: [
       { title: "Formation initiale", link: "/formation/initiale" },
       { title: "Formation continue", link: "/formation/continue" },
-      { title: "Demande d'adhésion", link: "/formation/adhesion" },
+      { title: "Demande d'admission", link: "/formation/admission" },
       { title: "Nos spécialités", link: "/formation/specialites" },
       { title: "Nos diplômes", link: "/formation/diplomes" },
     ],

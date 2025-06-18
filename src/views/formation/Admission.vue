@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="formation-continue">
-      <h2>Demande d'adhésion</h2>
+      <h2>Demande d'admission</h2>
 
       <img
         src="https://i.pinimg.com/736x/e7/9f/ee/e79fee9d43146d4df785f0ea5804b156.jpg"
