@@ -6,6 +6,7 @@ import Organisation from "../views/Organisation.vue";
 import formationContinue from "../views/formation/FormationContinue.vue";
 import FormationInitiale from "../views/formation/FormationInitiale.vue";
 import Admission from "../views/formation/Admission.vue";
+import Diplomes from "../views/formation/Diplomes.vue";
 
 const routes = [
   {
@@ -35,8 +36,13 @@ const routes = [
   },
   {
     path: "/formation/Admission",
-    name: "Admission",
+    name: "admission",
     component: Admission,
+  },
+    {
+    path: "/formation/Diplomes",
+    name: "Diplomes",
+    component: Diplomes,
   },
 ];
 
