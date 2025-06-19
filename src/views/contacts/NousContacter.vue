@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="form-container">
-      <h2 class="form-title">Laissez-nous un message</h2>
+      <h2 class="form-title">Laissez-nous un message </h2>
       <form @submit.prevent="handleSubmit" class="form-box">
         <div class="form-row">
           <div class="form-group">
