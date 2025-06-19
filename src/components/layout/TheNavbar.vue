@@ -186,11 +186,11 @@ const menu = [
   },
   {
     title: "Actualités",
-    children: [
-      { title: "Actualités Générales", link: "/actualites/general" },
-      { title: "Actualités Formations", link: "/actualites/formations" },
-      { title: "Événements à venir", link: "/actualites/evenements" },
-    ],
+    // children: [
+    //   { title: "Actualités Générales", link: "/actualites/general" },
+    //   { title: "Actualités Formations", link: "/actualites/formations" },
+    //   { title: "Événements à venir", link: "/actualites/evenements" },
+    // ],
   },
   {
     title: "Contacts",
