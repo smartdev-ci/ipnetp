@@ -10,6 +10,9 @@ import Diplomes from "../views/formation/Diplomes.vue";
 import Srv from "../views/services/Srv.vue";
 import Sap from "../views/services/Sap.vue";
 import Sp from "../views/services/Sp.vue";
+import Femmes from "../views/associations/Femmes.vue";
+import Mutuelle from "../views/associations/Mutuelle.vue";
+import MoresCi from "../views/associations/MoresCi.vue";
 
 const routes = [
   {
@@ -53,15 +56,30 @@ const routes = [
     name: "sap",
     component: Sap,
   },
-    {
+  {
     path: "/services/sp",
     name: "sp",
     component: Sp,
   },
-      {
+  {
     path: "/services/srv",
     name: "srv",
     component: Srv,
+  },
+  {
+    path: "/associations/femmes",
+    name: "femmes",
+    component: Femmes,
+  },
+  {
+    path: "/associations/mutuelle",
+    name: "mutuelle",
+    component: Mutuelle,
+  },
+  {
+    path: "/associations/mores-ci",
+    name: "mores-ci",
+    component: MoresCi,
   },
 ];
 
