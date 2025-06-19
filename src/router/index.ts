@@ -13,6 +13,8 @@ import Sp from "../views/services/Sp.vue";
 import Femmes from "../views/associations/Femmes.vue";
 import Mutuelle from "../views/associations/Mutuelle.vue";
 import MoresCi from "../views/associations/MoresCi.vue";
+import Production from "../views/recherche/Production.vue";
+import Anglais from "../views/recherche/Anglais.vue";
 
 const routes = [
   {
@@ -80,6 +82,16 @@ const routes = [
     path: "/associations/mores-ci",
     name: "mores-ci",
     component: MoresCi,
+  },
+  {
+    path: "/recherche/centre-recherche-production",
+    name: "centre-recherche-production",
+    component: Production,
+  },
+  {
+    path: "/recherche/anglais",
+    name: "anglais",
+    component: Anglais,
   },
 ];
 

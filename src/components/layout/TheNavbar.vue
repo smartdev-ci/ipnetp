@@ -143,7 +143,7 @@ const menu = [
       { title: "Formation initiale", link: "/formation/initiale" },
       { title: "Formation continue", link: "/formation/continue" },
       { title: "Demande d'admission", link: "/formation/admission" },
-      { title: "Nos spécialités", link: "/formation/specialites" },
+      // { title: "Nos spécialités", link: "/formation/specialites" },
       { title: "Nos diplômes", link: "/formation/diplomes" },
     ],
   },
@@ -171,14 +171,14 @@ const menu = [
     children: [
       {
         title: "Centre de Recherche et de Production",
-        link: "/recherche/centre-recherche",
+        link: "/recherche/centre-recherche-production",
       },
       {
         title: "Cellule des Recherches pour l'anglais",
         link: "/recherche/anglais",
       },
-      { title: "Revue IPNETP", link: "/recherche/revue" },
-      { title: "Bibliothèque", link: "/recherche/bibliotheque" },
+      // { title: "Revue IPNETP", link: "/recherche/revue" },
+      // { title: "Bibliothèque", link: "/recherche/bibliotheque" },
     ],
   },
   {
