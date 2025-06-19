@@ -154,7 +154,10 @@ const menu = [
       // { title: "e-courrier", link: "/" },
       // { title: "GRH", link: "/" },
       { title: "Service des Appuis Pédagogique (SAP)", link: "/services/sap" },
-      { title: "Service de recherche et de valorisation (SRV)", link: "/services/srv" },
+      {
+        title: "Service de recherche et de valorisation (SRV)",
+        link: "/services/srv",
+      },
       { title: "Service de production (SP)", link: "/services/sp" },
     ],
   },
@@ -191,7 +194,11 @@ const menu = [
   },
   {
     title: "Contacts",
-    link: "/contacts",
+    children: [
+      { title: "Prendre RDV", link: "https://rdv.ipnetp.cloud/", external: true },
+      { title: "Nous contacter", link: "/contacts/nous-contacter" },
+      { title: "Écire à nos service", link: "/contacts/contact-service" },
+    ],
   },
 ];
 
@@ -201,11 +208,9 @@ const setLanguage = (lang: string) => {
 </script>
 
 <style scoped>
-
-li{
+li {
   cursor: default;
 }
-
 
 .language-switcher {
   position: absolute;
@@ -217,7 +222,6 @@ li{
   gap: 0.5rem;
   padding: 0.75rem 1rem;
 }
-
 
 .lang-flag {
   padding: 0;
@@ -235,11 +239,10 @@ li{
   padding: 3px;
 }
 
-.fr{
+.fr {
   background-color: #007bff;
   border-radius: 4px;
   color: #fff;
-
 }
 
 .lang-flag:hover {
@@ -253,7 +256,6 @@ li{
 }
 
 @media (max-width: 1000px) {
-
 }
 
 li {
@@ -279,13 +281,10 @@ li {
   padding: var(--space-md) 0;
 }
 
-.logo{
+.logo {
   width: 120px;
   height: 45px;
 }
-
-
-
 
 .logo img {
   object-fit: cover;
@@ -337,8 +336,6 @@ li {
   padding: 0;
 }
 
-
-
 .nav-item {
   position: relative;
 }
@@ -355,7 +352,7 @@ li {
 
 .nav-link::after {
   background-color: #007bff;
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 5px;
@@ -409,7 +406,7 @@ li {
 }
 
 .dropdown-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 3px;
   left: 0;
