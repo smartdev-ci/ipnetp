@@ -186,6 +186,8 @@ const menu = [
   },
   {
     title: "Actualités",
+    link: "/",
+
     // children: [
     //   { title: "Actualités Générales", link: "/actualites/general" },
     //   { title: "Actualités Formations", link: "/actualites/formations" },
@@ -195,7 +197,11 @@ const menu = [
   {
     title: "Contacts",
     children: [
-      { title: "Prendre RDV", link: "https://rdv.ipnetp.cloud/", external: true },
+      {
+        title: "Prendre RDV",
+        link: "https://rdv.ipnetp.cloud/",
+        external: true,
+      },
       { title: "Nous contacter", link: "/contacts/nous-contacter" },
       { title: "Écire à nos service", link: "/contacts/contact-service" },
     ],
