@@ -7,6 +7,9 @@ import formationContinue from "../views/formation/FormationContinue.vue";
 import FormationInitiale from "../views/formation/FormationInitiale.vue";
 import Admission from "../views/formation/Admission.vue";
 import Diplomes from "../views/formation/Diplomes.vue";
+import Srv from "../views/services/Srv.vue";
+import Sap from "../views/services/Sap.vue";
+import Sp from "../views/services/Sp.vue";
 
 const routes = [
   {
@@ -39,10 +42,26 @@ const routes = [
     name: "admission",
     component: Admission,
   },
-    {
+  {
     path: "/formation/Diplomes",
-    name: "Diplomes",
+    name: "diplomes",
     component: Diplomes,
+  },
+
+  {
+    path: "/services/sap",
+    name: "sap",
+    component: Sap,
+  },
+    {
+    path: "/services/sp",
+    name: "sp",
+    component: Sp,
+  },
+      {
+    path: "/services/srv",
+    name: "srv",
+    component: Srv,
   },
 ];
 

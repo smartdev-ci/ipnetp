@@ -151,8 +151,11 @@ const menu = [
     title: "Activités & Services",
     children: [
       { title: "IFEF", link: "https://ipnetp-ifef.com/", external: true },
-      { title: "e-courrier", link: "/" },
-      { title: "GRH", link: "/" },
+      // { title: "e-courrier", link: "/" },
+      // { title: "GRH", link: "/" },
+      { title: "Service des Appuis Pédagogique (SAP)", link: "/services/sap" },
+      { title: "Service de recherche et de valorisation (SRV)", link: "/services/srv" },
+      { title: "Service de production (SP)", link: "/services/sp" },
     ],
   },
   {
