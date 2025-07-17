@@ -42,21 +42,48 @@
                 class="dropdown"
                 :class="{ open: isDropdownOpen(index) }"
               >
-                <li v-for="(child, cIndex) in item.children" :key="cIndex">
-                  <template v-if="!child.external">
-                    <router-link :to="child.link" class="dropdown-link">
-                      {{ child.title }}
-                    </router-link>
+                <li 
+                  v-for="(child, cIndex) in item.children" 
+                  :key="cIndex"
+                  :class="{ 'has-children': child.children }"
+                  @mouseenter="child.children ? desktopOpenSub(index, cIndex) : null"
+                  @mouseleave="child.children ? desktopCloseSub(index, cIndex) : null"
+                >
+                  <template v-if="!child.children">
+                    <template v-if="!child.external">
+                      <router-link :to="child.link" class="dropdown-link">
+                        {{ child.title }}
+                      </router-link>
+                    </template>
+                    <template v-else>
+                      <a
+                        :href="child.link"
+                        class="dropdown-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {{ child.title }}
+                      </a>
+                    </template>
                   </template>
                   <template v-else>
-                    <a
-                      :href="child.link"
-                      class="dropdown-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <div 
+                      class="dropdown-link has-submenu" 
+                      @click="toggleMobileSubDropdown(index, cIndex)"
                     >
                       {{ child.title }}
-                    </a>
+                      <span class="sub-arrow">›</span>
+                    </div>
+                    <ul 
+                      class="sub-dropdown"
+                      :class="{ open: isSubDropdownOpen(index, cIndex) }"
+                    >
+                      <li v-for="(subChild, scIndex) in child.children" :key="scIndex">
+                        <router-link :to="subChild.link" class="sub-dropdown-link">
+                          {{ subChild.title }}
+                        </router-link>
+                      </li>
+                    </ul>
                   </template>
                 </li>
               </ul>
@@ -104,6 +131,7 @@ import { ref, watch } from "vue";
 
 const isMenuOpen = ref(false);
 const dropdownStates = ref<Record<number, boolean>>({});
+const subDropdownStates = ref<Record<string, boolean>>({});
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -112,6 +140,13 @@ const toggleMenu = () => {
 const toggleMobileDropdown = (index: number) => {
   if (window.innerWidth <= 1000) {
     dropdownStates.value[index] = !dropdownStates.value[index];
+  }
+};
+
+const toggleMobileSubDropdown = (parentIndex: number, childIndex: number) => {
+  if (window.innerWidth <= 1000) {
+    const key = `${parentIndex}-${childIndex}`;
+    subDropdownStates.value[key] = !subDropdownStates.value[key];
   }
 };
 
@@ -127,7 +162,26 @@ const desktopClose = (index: number) => {
   if (window.innerWidth > 1000) dropdownStates.value[index] = false;
 };
 
+const desktopOpenSub = (parentIndex: number, childIndex: number) => {
+  if (window.innerWidth > 1000) {
+    const key = `${parentIndex}-${childIndex}`;
+    subDropdownStates.value[key] = true;
+  }
+};
+
+const desktopCloseSub = (parentIndex: number, childIndex: number) => {
+  if (window.innerWidth > 1000) {
+    const key = `${parentIndex}-${childIndex}`;
+    subDropdownStates.value[key] = false;
+  }
+};
+
 const isDropdownOpen = (index: number) => !!dropdownStates.value[index];
+
+const isSubDropdownOpen = (parentIndex: number, childIndex: number) => {
+  const key = `${parentIndex}-${childIndex}`;
+  return !!subDropdownStates.value[key];
+};
 
 const menu = [
   {
@@ -143,34 +197,34 @@ const menu = [
       { title: "Formation initiale", link: "/formation/initiale" },
       { title: "Formation continue", link: "/formation/continue" },
       { title: "Demande d'admission", link: "/formation/admission" },
-      // { title: "Nos spécialités", link: "/formation/specialites" },
       { title: "Nos diplômes", link: "/formation/diplomes" },
     ],
   },
   {
     title: "Activités & Services",
     children: [
-      { title: "IFEF", link: "https://ipnetp-ifef.com/", external: true },
-      // { title: "e-courrier", link: "/" },
-      // { title: "GRH", link: "/" },
-      { title: "Service des Appuis Pédagogique (SAP)", link: "/services/sap" },
-      {
-        title: "Service de recherche et de valorisation (SRV)",
-        link: "/services/srv",
+      { 
+        title: "IFEF", 
+        link: "https://ipnetp-ifef.com/", 
+        external: true 
       },
-      { title: "Service de production (SP)", link: "/services/sp" },
-      { title: "Association des femmes", link: "/associations/femmes" },
-      { title: "Mutuelle des agents", link: "/associations/mutuelle" },
-      { title: "MORES-CI (Section IPNETP)", link: "/associations/mores-ci" },
+      {
+        title: "Services",
+        children: [
+          { title: "Service des Appuis Pédagogique (SAP)", link: "/services/sap" },
+          { title: "Service de recherche et de valorisation (SRV)", link: "/services/srv" },
+          { title: "Service de production (SP)", link: "/services/sp" },
+        ]
+      },
+      {
+        title: "Associations",
+        children: [
+          { title: "Association des femmes", link: "/associations/femmes" },
+          { title: "Mutuelle des agents", link: "/associations/mutuelle" },
+          { title: "MORES-CI (Section IPNETP)", link: "/associations/mores-ci" },
+        ]
+      }
     ],
-  },
-  {
-   // title: "Associations IPNETP",
-   // children: [
-     // { title: "Association des femmes", link: "/associations/femmes" },
-      //{ title: "Mutuelle des agents", link: "/associations/mutuelle" },
-      //{ title: "MORES-CI (Section IPNETP)", link: "/associations/mores-ci" },
-    //],
   },
   {
     title: "Recherche",
@@ -183,19 +237,11 @@ const menu = [
         title: "Cellule des Recherches pour l'anglais",
         link: "/recherche/anglais",
       },
-      // { title: "Revue IPNETP", link: "/recherche/revue" },
-      // { title: "Bibliothèque", link: "/recherche/bibliotheque" },
     ],
   },
   {
     title: "Actualités",
     link: "/#actualites",
-
-    // children: [
-    //   { title: "Actualités Générales", link: "/actualites/general" },
-    //   { title: "Actualités Formations", link: "/actualites/formations" },
-    //   { title: "Événements à venir", link: "/actualites/evenements" },
-    // ],
   },
   {
     title: "Contacts",
@@ -264,16 +310,12 @@ li {
   }
 }
 
-@media (max-width: 1000px) {
-}
-
 li {
   list-style: none;
 }
 
 .header {
   position: relative;
-  /* background-color: var(--background-light); */
   background-color: white;
   position: fixed;
   width: 100%;
@@ -383,7 +425,7 @@ li {
   position: absolute;
   left: 0;
   top: 100%;
-  background-color: var(--background-light);
+  background-color: white;
   min-width: 220px;
   display: none;
   flex-direction: column;
@@ -402,16 +444,31 @@ li {
   transform: translateY(0);
 }
 
+.dropdown li {
+  position: relative;
+}
+
 .dropdown-link {
   display: inline-block;
   padding: 0.5rem 1rem;
   margin: 0.25rem 0;
-  /* espacements verticaux */
   color: var(--text-dark);
   text-decoration: none;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-link.has-submenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sub-arrow {
+  font-size: 1.2rem;
 }
 
 .dropdown-link::after {
@@ -433,6 +490,63 @@ li {
   width: 100%;
 }
 
+.has-children:hover .sub-dropdown {
+  display: flex;
+}
+
+.sub-dropdown {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: white;
+  min-width: 220px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+}
+
+.sub-dropdown.open {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sub-dropdown-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.sub-dropdown-link::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.sub-dropdown-link:hover {
+  color: var(--primary-color);
+}
+
+.sub-dropdown-link:hover::after {
+  width: 100%;
+}
+
 /* Responsive */
 @media (max-width: 1000px) {
   .menu-toggle {
@@ -445,7 +559,7 @@ li {
     position: fixed;
     right: -100%;
     top: 0;
-    background: var(--background-light);
+    background: white;
     width: 80%;
     height: 100vh;
     padding: 5rem 1rem 1rem;
@@ -479,6 +593,24 @@ li {
   }
 
   .dropdown-link {
+    padding-left: 2rem;
+  }
+
+  .sub-dropdown {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    display: none;
+    padding-left: 1rem;
+  }
+
+  .sub-dropdown.open {
+    display: flex;
+    opacity: 1;
+    transform: none;
+  }
+
+  .sub-dropdown-link {
     padding-left: 2rem;
   }
 }
