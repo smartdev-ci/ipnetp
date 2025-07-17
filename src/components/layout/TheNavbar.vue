@@ -159,15 +159,18 @@ const menu = [
         link: "/services/srv",
       },
       { title: "Service de production (SP)", link: "/services/sp" },
-    ],
-  },
-  {
-    title: "Associations IPNETP",
-    children: [
       { title: "Association des femmes", link: "/associations/femmes" },
       { title: "Mutuelle des agents", link: "/associations/mutuelle" },
       { title: "MORES-CI (Section IPNETP)", link: "/associations/mores-ci" },
     ],
+  },
+  {
+   // title: "Associations IPNETP",
+   // children: [
+     // { title: "Association des femmes", link: "/associations/femmes" },
+      //{ title: "Mutuelle des agents", link: "/associations/mutuelle" },
+      //{ title: "MORES-CI (Section IPNETP)", link: "/associations/mores-ci" },
+    //],
   },
   {
     title: "Recherche",
@@ -186,7 +189,7 @@ const menu = [
   },
   {
     title: "Actualités",
-    link: "/",
+    link: "/#actualites",
 
     // children: [
     //   { title: "Actualités Générales", link: "/actualites/general" },
@@ -203,7 +206,7 @@ const menu = [
         external: true,
       },
       { title: "Nous contacter", link: "/contacts/nous-contacter" },
-      { title: "Écire à nos service", link: "/contacts/contact-service" },
+      { title: "Écrire à nos service", link: "/contacts/contact-service" },
     ],
   },
 ];

@@ -14,7 +14,8 @@ onMounted(() => {
 <template>
   <section class="news-section section">
     <div class="container">
-      <SectionHeader 
+      <SectionHeader
+      id="actualites" 
         title="ACTUALITÉS RÉCENTES" 
         subtitle="Restez continuellement informer sur les actualités de notre institut" 
       />

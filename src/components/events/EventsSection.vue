@@ -17,7 +17,7 @@ onMounted(() => {
     <div class="container">
       <SectionHeader 
         title="ACTIVITES FORMATION" 
-        subtitle="Participate in our upcoming educational events" 
+        subtitle="Explorez nos diverses activités." 
       />
 
       <div class="events-grid grid-3">
