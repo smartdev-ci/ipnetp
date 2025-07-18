@@ -204,10 +204,10 @@ const menu = [
   {
     title: "Écoles de formation",
     children: [
-      { title: "Formation initiale", link: "/formation/initiale" },
-      { title: "Formation continue", link: "/formation/continue" },
-      { title: "Concours d'entrée", link: "/formation/admission" },
-      { title: "Nos diplômes", link: "/formation/diplomes" },
+      { title: "Formation initiale", link: "/initiale" },
+      { title: "Formation continue", link: "/continue" },
+      { title: "Concours d'entrée", link: "/admission" },
+      { title: "Nos diplômes", link: "/diplomes" },
     ],
   },
 
@@ -216,11 +216,11 @@ const menu = [
     children: [
       {
         title: "Centre de Recherche et de Production",
-        link: "/recherche/centre-recherche-production",
+        link: "/centre-recherche-production",
       },
       {
         title: "Cellule des Recherches pour l'anglais",
-        link: "/recherche/anglais",
+        link: "/anglais",
       },
     ],
   },
@@ -237,23 +237,23 @@ const menu = [
         children: [
           {
             title: "Service des Appuis Pédagogique (SAP)",
-            link: "/services/sap",
+            link: "/sap",
           },
           {
             title: "Service de recherche et de valorisation (SRV)",
-            link: "/services/srv",
+            link: "/srv",
           },
-          { title: "Service de production (SP)", link: "/services/sp" },
+          { title: "Service de production (SP)", link: "/sp" },
         ],
       },
       {
         title: "Associations",
         children: [
-          { title: "Association des femmes", link: "/associations/femmes" },
-          { title: "Mutuelle des agents", link: "/associations/mutuelle" },
+          { title: "Association des femmes", link: "/femmes" },
+          { title: "Mutuelle des agents", link: "/mutuelle" },
           {
             title: "MORES-CI (Section IPNETP)",
-            link: "/associations/mores-ci",
+            link: "/mores-ci",
           },
         ],
       },
@@ -276,8 +276,8 @@ const menu = [
         link: "https://rdv.ipnetp.cloud/",
         external: true,
       },
-      { title: "Nous contacter", link: "/contacts/nous-contacter" },
-      { title: "Écrire à nos service", link: "/contacts/contact-service" },
+      { title: "Nous contacter", link: "/nous-contacter" },
+      { title: "Écrire à nos service", link: "/contact-service" },
     ],
   },
 ];

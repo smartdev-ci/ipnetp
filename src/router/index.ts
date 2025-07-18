@@ -3,133 +3,50 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Direction from "../views/Direction.vue";
 import Organisation from "../views/Organisation.vue";
-import formationContinue from "../views/formation/FormationContinue.vue";
-import FormationInitiale from "../views/formation/FormationInitiale.vue";
-import Admission from "../views/formation/Admission.vue";
-import Diplomes from "../views/formation/Diplomes.vue";
-import Srv from "../views/services/Srv.vue";
-import Sap from "../views/services/Sap.vue";
-import Sp from "../views/services/Sp.vue";
-import Femmes from "../views/associations/Femmes.vue";
-import Mutuelle from "../views/associations/Mutuelle.vue";
-import MoresCi from "../views/associations/MoresCi.vue";
-import Production from "../views/recherche/Production.vue";
-import Anglais from "../views/recherche/Anglais.vue";
-import NousContacter from "../views/contacts/NousContacter.vue";
-import ContactService from "../views/contacts/ContactService.vue";
+import formationContinue from "../views/FormationContinue.vue";
+import FormationInitiale from "../views/FormationInitiale.vue";
+import Admission from "../views/Admission.vue";
+import Diplomes from "../views/Diplomes.vue";
+import Srv from "../views/Srv.vue";
+import Sap from "../views/Sap.vue";
+import Sp from "../views/Sp.vue";
+import Femmes from "../views/Femmes.vue";
+import Mutuelle from "../views/Mutuelle.vue";
+import MoresCi from "../views/MoresCi.vue";
+import Production from "../views/Production.vue";
+import Anglais from "../views/Anglais.vue";
+import NousContacter from "../views/NousContacter.vue";
+import ContactService from "../views/ContactService.vue";
 import Partner from "../views/Partner.vue";
 import Actualites from "../views/Actualites.vue";
 
 const routes = [
-  {
-    path: "/",
-    name: "home",
-    component: Home,
-  },
-  {
-    path: "/direction",
-    name: "direction",
-    component: Direction,
-  },
-  {
-    path: "/organisation",
-    name: "organisation",
-    component: Organisation,
-  },
-  {
-    path: "/formation/continue",
-    name: "continue",
-    component: formationContinue,
-  },
-  {
-    path: "/formation/initiale",
-    name: "initiale",
-    component: FormationInitiale,
-  },
-  {
-    path: "/formation/Admission",
-    name: "admission",
-    component: Admission,
-  },
-  {
-    path: "/formation/Diplomes",
-    name: "diplomes",
-    component: Diplomes,
-  },
-
-  {
-    path: "/services/sap",
-    name: "sap",
-    component: Sap,
-  },
-  {
-    path: "/services/sp",
-    name: "sp",
-    component: Sp,
-  },
-  {
-    path: "/services/srv",
-    name: "srv",
-    component: Srv,
-  },
-  {
-    path: "/associations/femmes",
-    name: "femmes",
-    component: Femmes,
-  },
-  {
-    path: "/associations/mutuelle",
-    name: "mutuelle",
-    component: Mutuelle,
-  },
-  {
-    path: "/associations/mores-ci",
-    name: "mores-ci",
-    component: MoresCi,
-  },
-  {
-    path: "/recherche/centre-recherche-production",
-    name: "centre-recherche-production",
-    component: Production,
-  },
-  {
-    path: "/recherche/anglais",
-    name: "anglais",
-    component: Anglais,
-  },
-  {
-    path: "/contacts/contact-service",
-    name: "contact-service",
-    component: ContactService,
-  },
-  {
-    path: "/contacts/nous-contacter",
-    name: "nous-contacter",
-    component: NousContacter,
-  },
-  {
-    path: "/partner",
-    name: "nos-partenaires",
-    component: Partner,
-  },
-  {
-    path: "/Actualites",
-    name: "qctualites",
-    component: Actualites,
-  },
+  { path: "/", name: "home", component: Home },
+  { path: "/direction", name: "direction", component: Direction },
+  { path: "/organisation", name: "organisation", component: Organisation },
+  { path: "/continue", name: "/formation/formation-continue", component: formationContinue },
+  { path: "/initiale", name: "formation-initiale", component: FormationInitiale },
+  { path: "/admission", name: "formation-admission", component: Admission },
+  { path: "/diplomes", name: "formation-diplomes", component: Diplomes },
+  { path: "/sap", name: "services-sap", component: Sap },
+  { path: "/sp", name: "services-sp", component: Sp },
+  { path: "/srv", name: "services-srv", component: Srv },
+  { path: "/femmes", name: "associations-femmes", component: Femmes },
+  { path: "/mutuelle", name: "associations-mutuelle", component: Mutuelle },
+  { path: "/mores-ci", name: "associations-mores-ci", component: MoresCi },
+  { path: "/centre-recherche-production", name: "recherche-centre-recherche-production", component: Production },
+  { path: "/anglais", name: "recherche-anglais", component: Anglais },
+  { path: "/contact-service", name: "contacts-contact-service", component: ContactService },
+  { path: "/nous-contacter", name: "contacts-nous-contacter", component: NousContacter },
+  { path: "/partner", name: "nos-partenaires", component: Partner },
+  { path: "/actualites", name: "actualites", component: Actualites },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(_to, _from, savedPosition) {
-    // Si la navigation précédente a une position sauvegardée (ex: bouton retour), on la restaure
-    if (savedPosition) {
-      return savedPosition;
-    } else {
-      // Sinon, on scroll en haut de page
-      return { top: 0 };
-    }
+    return savedPosition || { top: 0 };
   },
 });
 
