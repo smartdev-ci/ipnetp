@@ -17,6 +17,8 @@ import Production from "../views/recherche/Production.vue";
 import Anglais from "../views/recherche/Anglais.vue";
 import NousContacter from "../views/contacts/NousContacter.vue";
 import ContactService from "../views/contacts/ContactService.vue";
+import Partner from "../views/Partner.vue";
+import Actualites from "../views/Actualites.vue";
 
 const routes = [
   {
@@ -95,15 +97,25 @@ const routes = [
     name: "anglais",
     component: Anglais,
   },
-    {
+  {
     path: "/contacts/contact-service",
     name: "contact-service",
     component: ContactService,
   },
-      {
+  {
     path: "/contacts/nous-contacter",
     name: "nous-contacter",
     component: NousContacter,
+  },
+  {
+    path: "/partner",
+    name: "nos-partenaires",
+    component: Partner,
+  },
+  {
+    path: "/Actualites",
+    name: "qctualites",
+    component: Actualites,
   },
 ];
 

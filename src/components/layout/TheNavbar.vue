@@ -42,12 +42,16 @@
                 class="dropdown"
                 :class="{ open: isDropdownOpen(index) }"
               >
-                <li 
-                  v-for="(child, cIndex) in item.children" 
+                <li
+                  v-for="(child, cIndex) in item.children"
                   :key="cIndex"
                   :class="{ 'has-children': child.children }"
-                  @mouseenter="child.children ? desktopOpenSub(index, cIndex) : null"
-                  @mouseleave="child.children ? desktopCloseSub(index, cIndex) : null"
+                  @mouseenter="
+                    child.children ? desktopOpenSub(index, cIndex) : null
+                  "
+                  @mouseleave="
+                    child.children ? desktopCloseSub(index, cIndex) : null
+                  "
                 >
                   <template v-if="!child.children">
                     <template v-if="!child.external">
@@ -67,19 +71,25 @@
                     </template>
                   </template>
                   <template v-else>
-                    <div 
-                      class="dropdown-link has-submenu" 
+                    <div
+                      class="dropdown-link has-submenu"
                       @click="toggleMobileSubDropdown(index, cIndex)"
                     >
                       {{ child.title }}
                       <span class="sub-arrow">›</span>
                     </div>
-                    <ul 
+                    <ul
                       class="sub-dropdown"
                       :class="{ open: isSubDropdownOpen(index, cIndex) }"
                     >
-                      <li v-for="(subChild, scIndex) in child.children" :key="scIndex">
-                        <router-link :to="subChild.link" class="sub-dropdown-link">
+                      <li
+                        v-for="(subChild, scIndex) in child.children"
+                        :key="scIndex"
+                      >
+                        <router-link
+                          :to="subChild.link"
+                          class="sub-dropdown-link"
+                        >
                           {{ subChild.title }}
                         </router-link>
                       </li>
@@ -192,42 +202,17 @@ const menu = [
     ],
   },
   {
-    title: "Formation",
+    title: "Écoles de formation",
     children: [
       { title: "Formation initiale", link: "/formation/initiale" },
       { title: "Formation continue", link: "/formation/continue" },
-      { title: "Demande d'admission", link: "/formation/admission" },
+      { title: "Concours d'entrée", link: "/formation/admission" },
       { title: "Nos diplômes", link: "/formation/diplomes" },
     ],
   },
+
   {
-    title: "Activités & Services",
-    children: [
-      { 
-        title: "IFEF", 
-        link: "https://ipnetp-ifef.com/", 
-        external: true 
-      },
-      {
-        title: "Services",
-        children: [
-          { title: "Service des Appuis Pédagogique (SAP)", link: "/services/sap" },
-          { title: "Service de recherche et de valorisation (SRV)", link: "/services/srv" },
-          { title: "Service de production (SP)", link: "/services/sp" },
-        ]
-      },
-      {
-        title: "Associations",
-        children: [
-          { title: "Association des femmes", link: "/associations/femmes" },
-          { title: "Mutuelle des agents", link: "/associations/mutuelle" },
-          { title: "MORES-CI (Section IPNETP)", link: "/associations/mores-ci" },
-        ]
-      }
-    ],
-  },
-  {
-    title: "Recherche",
+    title: "Recherche et Productions",
     children: [
       {
         title: "Centre de Recherche et de Production",
@@ -240,9 +225,49 @@ const menu = [
     ],
   },
   {
+    title: "Activités et Services",
+    children: [
+      {
+        title: "IFEF",
+        link: "https://ipnetp-ifef.com/",
+        external: true,
+      },
+      {
+        title: "Services",
+        children: [
+          {
+            title: "Service des Appuis Pédagogique (SAP)",
+            link: "/services/sap",
+          },
+          {
+            title: "Service de recherche et de valorisation (SRV)",
+            link: "/services/srv",
+          },
+          { title: "Service de production (SP)", link: "/services/sp" },
+        ],
+      },
+      {
+        title: "Associations",
+        children: [
+          { title: "Association des femmes", link: "/associations/femmes" },
+          { title: "Mutuelle des agents", link: "/associations/mutuelle" },
+          {
+            title: "MORES-CI (Section IPNETP)",
+            link: "/associations/mores-ci",
+          },
+        ],
+      },
+      {
+        title: "Nos partenaires",
+        link: "/partner",
+      },
+    ],
+  },
+  {
     title: "Actualités",
     link: "/#actualites",
   },
+
   {
     title: "Contacts",
     children: [
