@@ -115,7 +115,7 @@ main {
 
 .formation-continue h2 {
   font-size: 2rem;
-  color: var(--blue);
+  color: #1A3397;
   margin-bottom: 2rem;
   text-align: center;
 }

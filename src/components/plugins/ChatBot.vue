@@ -107,7 +107,7 @@ export default {
 
 /* En-tête du chat */
 .chat-header {
-  background: #0f1e3d;
+  background: #1A3397;
   color: white;
   padding: 10px;
   display: flex;

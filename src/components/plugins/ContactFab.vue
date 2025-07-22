@@ -63,7 +63,7 @@
   .fab-main {
     width: 56px;
     height: 56px;
-    background-color: #007bff;
+    background-color: #3399FF;
     color: white;
     border: none;
     border-radius: 50%;
@@ -74,7 +74,7 @@
   }
   
   .fab-main:hover {
-    background-color: #0056b3;
+    background-color: #0070C9;
   }
   
   .fab-button {

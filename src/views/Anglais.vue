@@ -100,7 +100,7 @@ img {
 }
 
 .box-txt h2 {
-  color: #007bff;
+  color: #1A3397;
   font-size: 28px;
   font-weight: bold;
 }

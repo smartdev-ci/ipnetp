@@ -61,6 +61,7 @@ onMounted(() => {
 
 .library-swiper {
   padding:  45px 45px;
+  
 }
 
 .product-card img {

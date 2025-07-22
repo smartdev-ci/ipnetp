@@ -107,6 +107,7 @@ main {
   padding-top: 100px;
 }
 
+
 :root {
   --blue: #007bff;
   --blue-light: #e6f0ff;
@@ -132,7 +133,7 @@ main {
 
 .formation-initiale h2 {
   font-size: 2rem;
-  color: var(--blue);
+  color: #1A3397;
   margin-bottom: 2rem;
   text-align: center;
 }

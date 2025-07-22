@@ -115,24 +115,6 @@ export default {
           type: "Opérateur public de la formation professionnelle",
           website: "https://www.agefop.ci/",
         },
-        // {
-        //   id: 8,
-        //   name: "AFD",
-        //   logo: "https://via.placeholder.com/150?text=AFD",
-        //   description:
-        //     "Appui au développement des infrastructures et équipements pédagogiques de pointe.",
-        //   type: "Agence de développement",
-        //   website: "https://afd.fr",
-        // },
-        // {
-        //   id: 9,
-        //   name: "Union Européenne",
-        //   logo: "https://via.placeholder.com/150?text=UE",
-        //   description:
-        //     "Financement de projets éducatifs dans le cadre des programmes de coopération internationale.",
-        //   type: "Institution internationale",
-        //   website: "https://europa.eu",
-        // },
       ],
     };
   },
@@ -156,7 +138,7 @@ main {
 
 .partners-intro h1 {
   font-size: 2.5rem;
-  color: var(--dark);
+  color: #1A3397;
   margin-bottom: 15px;
 }
 
@@ -310,7 +292,7 @@ main {
 .cta-button {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #0069d9;
+  background-color: #C23B22;
   color: white;
   border-radius: 4px;
   text-decoration: none;
@@ -319,7 +301,7 @@ main {
 }
 
 .cta-button:hover {
-  background-color: #0069d9;
+  background-color: #792111;
   transform: translateY(-2px);
 }
 

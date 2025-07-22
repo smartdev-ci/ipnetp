@@ -46,6 +46,7 @@ onMounted(() => {
   width: 100vw;
   display: flex;
   justify-content: start;
+  color: #1A3397;
 }
 
 .news-grid {

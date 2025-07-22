@@ -47,7 +47,7 @@ function startRotation() {
 .flash-banner {
   display: flex;
   align-items: center;
-  background: #0f1e3d;
+  background: #1A3397;
   color: white;
   height: 70px;
   padding: 10px;

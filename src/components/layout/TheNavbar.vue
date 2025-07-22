@@ -5,7 +5,7 @@
         <!-- LOGO -->
         <div class="logo">
           <a href="/">
-            <img src="/images/logo_ipnetp.png" alt="Logo" />
+            <img src="/images/logos/logo_bleu_ipnetp.png" alt="Logo IPNETP" />
           </a>
         </div>
 
@@ -310,7 +310,7 @@ li {
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease;
-  color: #007bff;
+  color: #3399FF;
   width: 25px;
   height: 25px;
   display: flex;
@@ -320,7 +320,7 @@ li {
 }
 
 .fr {
-  background-color: #007bff;
+  background-color: #3399FF;
   border-radius: 4px;
   color: #fff;
 }
@@ -427,7 +427,7 @@ li {
 }
 
 .nav-link::after {
-  background-color: #007bff;
+  background-color: #3399FF;
   content: "";
   position: absolute;
   left: 0;
@@ -503,7 +503,7 @@ li {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #007bff;
+  background-color: #3399FF;
   transition: width 0.3s ease;
 }
 
@@ -560,7 +560,7 @@ li {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #007bff;
+  background-color: #3399FF;
   transition: width 0.3s ease;
 }
 

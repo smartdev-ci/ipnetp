@@ -220,16 +220,17 @@ section.s1 {
 section.s1 h2 {
   font-size: 2rem;
   color: white;
-  background-color: #0f1e3d;
+  background-color: #1A3397;
   padding: 20px;
-  border-radius: 15px;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
   margin-bottom: 2rem;
   text-align: center;
 }
 .box-img {
   overflow: hidden;
   width: 55vw;
-  height: 40vw;
+  height: 30vw;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 123, 255, 0.15);
   margin-bottom: 2rem;
@@ -250,7 +251,7 @@ img {
   position: relative;
   margin: 70px auto;
   background-color: #ffffff;
-  color: #0f1e3d;
+  color: #4d4f54;
   padding: 2rem;
   width: 70vw;
   max-width: 800px;
@@ -263,14 +264,14 @@ img {
   position: absolute;
   width: 110%;
   height: 15px;
-  background-color: #007bff;
+  background-color: #3399FF;
   left: 0;
   top: -5px;
 }
 
 .form-title {
   text-align: center;
-  color: #007bff;
+  color: #3399FF;
   margin-bottom: 2rem;
   font-size: 1.8rem;
 }
@@ -302,7 +303,7 @@ img {
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 .submit-btn {
-  background-color: #007bff;
+  background-color: #3399FF;
   width: 20%;
   min-width: 200px;
   margin: auto;
@@ -315,7 +316,7 @@ img {
   transition: background 0.3s ease;
 }
 .submit-btn:hover {
-  background-color: #0056b3;
+  background-color: #0070C9;
 }
 @media (max-width: 600px) {
   .form-container {

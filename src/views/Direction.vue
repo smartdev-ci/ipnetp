@@ -3,7 +3,7 @@
     <h1>Mot de la directrice</h1>
     <section class="content">
       <div class="image-block dg-img">
-        <img src="https://ipnetp.ci/wp-content/uploads/2023/12/DG2.png" />
+        <img src="/images/dg.jpg" />
       </div>
       <div class="text-block">
         <h2>Intégrer l'IPNETP</h2>
@@ -64,6 +64,7 @@ h1 {
   border-bottom: solid 2px;
   width: fit-content;
   margin: auto;
+  color: #1A3397;
 }
 
 .page-container {
@@ -103,6 +104,7 @@ h1 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 8px;
+  color: #000;
 }
 
 .intro ul {
@@ -115,7 +117,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
   gap: 50px;
   padding-top: 70px;
 }
@@ -150,9 +151,23 @@ h1 {
 }
 
 .image-block {
+  position: relative;
   width: 600px;
   height: 370px;
   box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.09);
+}
+
+.dg-img:after {
+  position: absolute;
+  content: 'Professeur Edmee MANSILLA';
+  bottom: 3%;
+  right: 0;
+  height: fit-content;
+  width: fit-content;
+  padding: 8px;
+  background-color: #1a339782;
+  color: white;
+  border-top-left-radius: 15px;
 }
 
 .image-block {

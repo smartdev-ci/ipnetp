@@ -100,7 +100,7 @@ defineProps({
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #3399FF;
   color: white;
   padding: 8px 12px;
   border-radius: 4px;
@@ -111,6 +111,6 @@ defineProps({
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #0070C9;
 }
 </style>

@@ -19,5 +19,10 @@ defineProps({
 </template>
 
 <style scoped>
-/* Section header styles are defined in global.css */
+h2.section-title{
+  color: #1A3397;
+}
+h2.section-title:after{
+  background-color: #1A3397;
+}
 </style>

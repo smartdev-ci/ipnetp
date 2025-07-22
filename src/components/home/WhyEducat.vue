@@ -31,7 +31,7 @@ import AppButton from '../common/AppButton.vue'
 <style scoped>
 
 .view_more{
-  background-color: #0f1e3d;
+  background-color: #C23B22;
 }
 
 .view_more:hover{
@@ -40,7 +40,7 @@ import AppButton from '../common/AppButton.vue'
 }
 
 .why-educat {
-  background-color: #2e4356;
+  background-color: #0070C9;
   color: #fff;
   padding: 0;
   /* overflow: hidden; */
@@ -48,7 +48,7 @@ import AppButton from '../common/AppButton.vue'
 }
 
 .why-educat-header {
-  background-color: #0f1e3d;
+  background-color: #1A3397;
   clip-path: polygon(0 0, 450px 0%, 528px 100%, 0% 100%);
   padding: 1rem 3rem;
   font-size: 1.8rem;

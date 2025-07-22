@@ -34,12 +34,12 @@
     <!-- Bouclier -->
     <path 
       d="M12 2L4 5v6c0 5 4 9 8 9s8-4 8-9V5l-8-3z" 
-      stroke="#007bff" 
+      stroke="#0070C9" 
       stroke-width="2" 
       fill="none" 
     />
     <!-- Coche -->
-    <path d="M9 12l2 2 4-4" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" stroke="#0070C9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
   <h3>Conditions d'accès sur concours</h3>
 </div>
@@ -65,7 +65,7 @@
       <!-- INSCRIPTIONS -->
       <div class="info-section">
 <div class="icon-wrapper">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0070C9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
     <!-- Classeur -->
     <path d="M3 5h18v14H3z" />
     <line x1="7" y1="8" x2="17" y2="8" />
@@ -104,7 +104,7 @@
       <!-- ORGANISATION DE LA FORMATION -->
       <div class="info-section">
         <div class="icon-wrapper">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="#007bff">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#0070C9">
             <path d="M12 2L2 7l10 5 10-5-10-5zm0 18l-8-4v2l8 4 8-4v-2l-8 4zm0-6l-8-4v2l8 4 8-4v-2l-8 4z"/>
           </svg>
           <h3>Organisation de la formation</h3>
@@ -265,12 +265,12 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #007bff;
+  border-color: #0070C9;
   outline: none;
 }
 
 .submit-btn {
-  background-color: #007bff;
+  background-color: #0070C9;
   color: white;
   padding: 12px;
   font-weight: bold;
@@ -281,7 +281,7 @@ textarea:focus {
 }
 
 .submit-btn:hover {
-  background-color: #0056b3;
+  background-color: #0070C9;
 }
 
 
@@ -304,9 +304,9 @@ main {
   padding: 3rem 1.5rem;
 }
 
-.formation-continue h2 {
+ h2 {
   font-size: 2.3rem;
-  color: var(--blue);
+  color: #1A3397;
   text-align: center;
   margin-bottom: 2.5rem;
 }
@@ -346,7 +346,7 @@ main {
 }
 
 .icon-wrapper h3 {
-  color: #007bff;
+  color: #0070C9;
   font-size: 1.6rem;
   margin: 0;
 }

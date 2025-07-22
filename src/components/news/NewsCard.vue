@@ -34,7 +34,7 @@ defineProps({
 .news-card {
   display: flex;
   background-color: white;
-  border-bottom: 4px solid #007bff;
+  border-bottom: 4px solid #3399FF;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);

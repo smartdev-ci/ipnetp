@@ -229,7 +229,7 @@ section > div {
 }
 
 .box-txt h2 {
-  color: #007bff;
+  color: #1A3397;
   font-size: 28px;
   font-weight: bold;
 }
@@ -328,7 +328,7 @@ h1 {
 }
 
 .map-title {
-  color: #0f1e3d;
+  color: #1A3397;
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
@@ -341,7 +341,7 @@ h1 {
 }
 
 .map-button {
-  background-color: #007bff;
+  background-color: #3399FF;
   color: white;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -352,7 +352,7 @@ h1 {
 }
 
 .map-button:hover {
-  background-color: #339eff;
+  background-color: #0070C9;
 }
 
 @media (max-width: 480px) {

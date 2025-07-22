@@ -47,7 +47,7 @@ onMounted(() => {
         <div class="footer-grid">
           <div class="footer-column">
             <div class="footer-logo">
-              <img class="img-footer" src="https://ipnetp.ci/wp-content/uploads/2023/12/cropped-images-1-1-300x300.png"
+              <img class="img-footer" src="/images/logos/Logo_noir_ipnetp.png"
                 alt="">
             </div>
             <!-- <p>Transform your learning experience with our comprehensive educational platform. Join thousands of students worldwide.</p> -->
@@ -97,7 +97,7 @@ onMounted(() => {
 }
 
 .newsletter-section {
-  background-color: var(--primary-color);
+  background-color: #070f2d;
   padding: var(--space-lg) 0;
 }
 
@@ -129,7 +129,7 @@ onMounted(() => {
 }
 
 .footer-main {
-  background-color: var(--secondary-color);
+  background-color: #1A3397;
   padding: var(--space-xxl) 0;
 }
 
@@ -144,6 +144,16 @@ onMounted(() => {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: var(--space-md);
+  width: 100px;
+  height: 40px;
+  background-color: #fff;
+  padding: 3px;
+}
+
+.footer-logo img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .footer-logo strong {
@@ -167,7 +177,7 @@ onMounted(() => {
   justify-content: center;
   width: 36px;
   height: 36px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #ffffff1a;
   border-radius: 50%;
   color: var(--text-white);
   transition: background-color var(--transition-fast);
@@ -240,7 +250,7 @@ onMounted(() => {
 }
 
 .footer-bottom {
-  background-color: var(--secondary-dark);
+  background-color: #070f2d;
   padding: var(--space-md) 0;
   text-align: center;
 }
